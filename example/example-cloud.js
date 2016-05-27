@@ -6,12 +6,16 @@
 
 'use strict'
 
+const co = require('co')
 const sugoCloud = require('sugo-cloud')
 
-let cloud = sugoCloud({
-  // Options
-})
+co(function * () {
+  let cloud = yield sugoCloud({
+    // Options
+    port : 3000
+  })
 
-// Start sugo-cloud server on port 3000
-// You need exports this to public via reverse proxy like nginx
-cloud.listen(3000)
+  process.on('beforeExit', () => co(function * () {
+    yield cloud.close()
+  }))
+})

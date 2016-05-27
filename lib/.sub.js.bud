@@ -1,0 +1,21 @@
+/**
+ * Bud for sub commands
+ */
+'use strict'
+
+const sub = require('./.sub.json')
+const stringcase = require('stringcase')
+
+module.exports = Object.keys(sub).map((shortName) => ({
+  force: true,
+  mode: '444',
+  path: `${stringcase.snakecase(shortName)}.js`,
+  data: {
+    shortName,
+    name: sub[ shortName ]
+  }
+}))
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

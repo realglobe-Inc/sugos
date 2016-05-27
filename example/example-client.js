@@ -17,7 +17,7 @@ client.connect(TARGET_SPOT_ID, function * (spot) {
   let bash = spot.bash() // Get bash interface
 
   // Trigger ls command on remote spot
-  let lsResult = yield bash.exec('ln -ls /opt')
+  let lsResult = yield bash.exec('ls -la /opt/shared')
   console.log(lsResult)
 
   // Run reboot command

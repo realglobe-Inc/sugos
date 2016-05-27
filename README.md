@@ -78,15 +78,19 @@ Usage
 
 'use strict'
 
+const co = require('co')
 const sugoCloud = require('sugo-cloud')
 
-let cloud = sugoCloud({
-  // Options
-})
+co(function * () {
+  let cloud = yield sugoCloud({
+    // Options
+    port : 3000
+  })
 
-// Start sugo-cloud server on port 3000
-// You need exports this to public via reverse proxy like nginx
-cloud.listen(3000)
+  process.on('beforeExit', () => co(function * () {
+    yield cloud.close()
+  }))
+})
 
 ```
 
@@ -106,7 +110,7 @@ const sugoSpot = require('sugo-spot')
 const CLOUD_URL = 'my-sugo-cloud.example.com'
 
 let spot = sugoSpot(CLOUD_URL, {
-  id: 'my-spot-01',
+  key: 'my-spot-01',
   interfaces: {
     // Add plugin to provide bash interface
     bash: require('sugo-spot-bash')({})
@@ -141,7 +145,7 @@ client.connect(TARGET_SPOT_ID, function * (spot) {
   let bash = spot.bash() // Get bash interface
 
   // Trigger ls command on remote spot
-  let lsResult = yield bash.exec('ln -ls /opt')
+  let lsResult = yield bash.exec('ls -la /opt/shared')
   console.log(lsResult)
 
   // Run reboot command

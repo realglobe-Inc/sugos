@@ -1,0 +1,5 @@
+{
+  "client": "sugo-client",
+  "cloud": "sugo-cloud",
+  "spot": "sugo-spot"
+}

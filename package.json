@@ -7,7 +7,9 @@
     "test": "./ci/test.js"
   },
   "repository": "realglobe-Inc/sugos",
-  "keywords": [],
+  "keywords": [
+    "SUGOS"
+  ],
   "author": {
     "name": "Taka Okunishi",
     "email": "okunishitaka.com@gmail.com",
@@ -19,7 +21,8 @@
   },
   "homepage": "https://github.com/realglobe-Inc/sugos#readme",
   "dependencies": {
-    "co": "^4.6.0"
+    "co": "^4.6.0",
+    "stringcase": "^2.0.1"
   },
   "devDependencies": {
     "ape-covering": "^3.0.3",
@@ -36,5 +39,8 @@
   "engines": {
     "node": ">=6",
     "npm": ">=3"
+  },
+  "publishConfig": {
+    "registry": "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-local"
   }
 }
