@@ -1,8 +1,3 @@
-#!/usr/bin/env node
-
-/**
- * Run spot server inside LAN
- */
 'use strict'
 
 const sugoSpot = require('sugo-spot')

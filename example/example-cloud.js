@@ -6,13 +6,15 @@
 
 'use strict'
 
-const co = require('co')
 const sugoCloud = require('sugo-cloud')
 
+const co = require('co')
+
 co(function * () {
+// Start sugo-cloud server
   let cloud = yield sugoCloud({
     // Options
-    port : 3000
+    port: 3000
   })
 
   process.on('beforeExit', () => co(function * () {

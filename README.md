@@ -78,13 +78,15 @@ Usage
 
 'use strict'
 
-const co = require('co')
 const sugoCloud = require('sugo-cloud')
 
+const co = require('co')
+
 co(function * () {
+// Start sugo-cloud server
   let cloud = yield sugoCloud({
     // Options
-    port : 3000
+    port: 3000
   })
 
   process.on('beforeExit', () => co(function * () {
@@ -98,11 +100,6 @@ co(function * () {
 #### Running Spot Server
 
 ```javascript
-#!/usr/bin/env node
-
-/**
- * Run spot server inside LAN
- */
 'use strict'
 
 const sugoSpot = require('sugo-spot')
@@ -123,30 +120,37 @@ spot.connect()
 ```
 
 
-#### Remote Control from Client
+#### Remote Terminal
 
 ```javascript
-#!/usr/bin/env node
-
-/**
- * Control spot from remote.
- */
 'use strict'
 
-const sugoClient = require('sugo-client')
+const sugoTerminal = require('sugo-terminal')
 
 const CLOUD_URL = 'my-sugo-cloud.example.com'
 const TARGET_SPOT_ID = 'my-spot-01'
 
-let client = sugoClient(CLOUD_URL, {})
+let terminal = sugoTerminal(CLOUD_URL, {})
 
 // Connect to the target spot
-client.connect(TARGET_SPOT_ID, function * (spot) {
+terminal.connect(TARGET_SPOT_ID, function * (spot) {
+
   let bash = spot.bash() // Get bash interface
 
   // Trigger ls command on remote spot
-  let lsResult = yield bash.exec('ls -la /opt/shared')
-  console.log(lsResult)
+  {
+    let lsResult = yield bash.exec('ls -la /opt/shared')
+    console.log(lsResult)
+  }
+
+  // Pipe std out
+  {
+    let out = (chunk) => process.stdout.write(chunk)
+    bash.on('stdout', out)
+    bash.exec('tail -f /var/log/app.log') // Trigger tailing without blocking
+    yield new Promise((resolve) => setTimeout(() => resolve(), 3000)) // Block for duration
+    bash.off('stdout', out)
+  }
 
   // Run reboot command
   yield bash.exec('reboot')
@@ -178,5 +182,8 @@ This software is released under the [MIT License](https://github.com/realglobe-I
 Links
 ------
 
++ [sugo-spot](https://github.com/realglobe-Inc/sugo-spot)
++ [sugo-cloud](https://github.com/realglobe-Inc/sugo-cloud)
++ [sugo-client](https://github.com/realglobe-Inc/sugo-client)
 
 <!-- Links End -->

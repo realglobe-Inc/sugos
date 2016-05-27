@@ -15,6 +15,7 @@ apeTasking.runTasks('build', [
   () => coz.render([
     '.*.bud',
     'lib/.*.bud',
+    'example/.*.bud',
     'test/.*.bud'
   ])
 ], true)
