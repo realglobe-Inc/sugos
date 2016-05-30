@@ -9,7 +9,6 @@ let terminal = sugoTerminal(CLOUD_URL, {})
 
 // Connect to the target spot
 terminal.connect(TARGET_SPOT_ID, function * (spot) {
-
   let bash = spot.bash() // Get bash interface
 
   // Trigger ls command on remote spot
