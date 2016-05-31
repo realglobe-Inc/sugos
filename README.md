@@ -87,9 +87,9 @@ co(function * () {
 Mechanism
 -----
 
-**Sugo-Spots** receives commands from remote terminal via **Sugo-Cloud**
+**Sugo-Cloud** server works as hub and interchange events between
+**Sugo-Spots** and **Sugo-Terminal**
 
-##### Structure
 
 ![Structure Image](./doc/images/structure.png)
 
