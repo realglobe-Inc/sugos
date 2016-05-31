@@ -2,6 +2,9 @@ language: node_js
 node_js:
 - '6'
 before_install:
+- echo "registry = https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual" > .npmrc
+- curl -u${NPM_USER}:${NPM_PASSWORD} "https://realglobe.artifactoryonline.com/realglobe/api/npm/auth" >> .npmrc
+- cat .npmrc
 - npm install istanbul mocha -g
 install:
 - npm install
