@@ -87,7 +87,12 @@ co(function * () {
 Mechanism
 -----
 
+**Sugo-Spots** receives commands from remote terminal via **Sugo-Cloud**
+
+##### Structure
+
 ![Structure Image](./doc/images/structure.png)
+
 
 <!-- Section from "doc/guides/00.Mechanisms.md.hbs" End -->
 
