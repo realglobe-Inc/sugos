@@ -1,14 +1,14 @@
 /**
- * Test case for client.
+ * Test case for terminal.
  * Runs with mocha.
  */
 'use strict'
 
-const client = require('../lib/client.js')
+const terminal = require('../lib/terminal.js')
 const assert = require('assert')
 const co = require('co')
 
-describe('client', () => {
+describe('terminal', () => {
   before(() => co(function * () {
 
   }))
@@ -17,8 +17,8 @@ describe('client', () => {
 
   }))
 
-  it('Client', () => co(function * () {
-
+  it('Terminal', () => co(function * () {
+    assert.ok(terminal)
   }))
 })
 

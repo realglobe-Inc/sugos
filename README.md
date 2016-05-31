@@ -41,12 +41,57 @@ Super Ultra Gorgeous Outstanding Special framework for IOT
 <a name="overview"></a>
 
 
+SUGOS enable you to control computers from remote network with Javascript.  
+
+```javascript
+#!/usr/bin/env node
+'use strict'
+
+const co = require('co')
+const sugoTerminal = require('sugo-terminal')
+
+const CLOUD_URL = 'my-sugo-cloud.example.com'
+
+co(function * () {
+  // Create an terminal
+  let terminal = sugoTerminal(CLOUD_URL, {})
+
+  // Connect to remote spot
+  let mac = yield terminal.connect('my-mac-book-01')
+  let windows = yield terminal.connect('my-windows-pc-01')
+
+  // Access shell interface of the mac machine
+  let shell = mac.shell()
+  // Access kinect sensor on the windows machine
+  let kinect = windows.kinect()
+
+  kinect.on('bodyFrame', () => co(function * (bodyFrame) {
+    shell.spawn('play', [ '~/Musics/pin.wav' ])
+    /* ... */
+  }))
+})
+
+
+```
+
+
 
 <!-- Overview End -->
 
 
 <!-- Sections Start -->
 <a name="sections"></a>
+
+<!-- Section from "doc/guides/00.Mechanisms.md.hbs" Start -->
+
+<a name="section-doc-guides-00-mechanisms-md"></a>
+Mechanism
+-----
+
+[Structure Image](./doc/images/structure.png)
+
+
+<!-- Section from "doc/guides/00.Mechanisms.md.hbs" End -->
 
 <!-- Section from "doc/guides/01.Installation.md.hbs" Start -->
 
@@ -96,8 +141,9 @@ co(function * () {
 
 ```
 
+For more detail, see [sugo-cloud](https://github.com/realglobe-Inc/sugo-cloud)
 
-#### Running Spot Server
+#### Running Spot Client
 
 ```javascript
 'use strict'
@@ -118,9 +164,10 @@ let spot = sugoSpot(CLOUD_URL, {
 spot.connect()
 
 ```
+For more detail, see [sugo-spot](https://github.com/realglobe-Inc/sugo-spot)
 
 
-#### Remote Terminal
+#### Remote Terminal Client
 
 ```javascript
 'use strict'
@@ -134,7 +181,6 @@ let terminal = sugoTerminal(CLOUD_URL, {})
 
 // Connect to the target spot
 terminal.connect(TARGET_SPOT_ID, function * (spot) {
-
   let bash = spot.bash() // Get bash interface
 
   // Trigger ls command on remote spot
@@ -156,6 +202,8 @@ terminal.connect(TARGET_SPOT_ID, function * (spot) {
   yield bash.exec('reboot')
 })
 
+
+For more detail, see [sugo-terminal](https://github.com/realglobe-Inc/sugo-terminal)
 ```
 
 
