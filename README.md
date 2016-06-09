@@ -100,7 +100,7 @@ Mechanism
 -----
 
 **Sugo-Cloud** server works as hub and interchange events between
-**Sugo-Spots** and **Sugo-Terminal**
+**Sugo-Spots** and **Sugo-Terminals**
 
 
 ![Structure Image](./doc/images/structure.png)
@@ -130,26 +130,19 @@ Getting Started
 
 3 steps to get started
 
-### Step01: Setup [sugo-cloud](https://github.com/realglobe-Inc/sugo-cloud)
+### Step01: Setup SUGO-Cloud
 
-First of all, you need to setup sugo-cloud on public network so that spot and terminal can access it.
-
-For more details, see [README of sugo-cloud](https://github.com/realglobe-Inc/sugo-cloud#readme)
+First of all, you need to setup [sugo-cloud](https://github.com/realglobe-Inc/sugo-cloud) on public network so that spot and terminal can access it.
 
 
-### Step02: Run [sugo-spot](https://github.com/realglobe-Inc/sugo-spot)
+### Step02: Run SUGO-Spot
 
-Run sugo-spot on local network where your machine or sensors exists and access to the sugo-cloud.
-
-For more details, see [README of sugo-spot](https://github.com/realglobe-Inc/sugo-spot#readme)
+Run [sugo-spot](https://github.com/realglobe-Inc/sugo-spot) on local network where your machine or sensors exists and access to the sugo-cloud.
 
 
-### Step03: Use [sugo-terminal](https://github.com/realglobe-Inc/sugo-terminal)
+### Step03: Use SUGO-Terminal
 
-Connect to remote spot from sugo-terminal via cloud.
-
-For more details, see [README of sugo-terminal](https://github.com/realglobe-Inc/sugo-terminal#readme)
-
+Connect to remote spot from [sugo-terminal](https://github.com/realglobe-Inc/sugo-terminal) via cloud.
 
 
 <!-- Section from "doc/guides/02.Getting Started.md.hbs" End -->
