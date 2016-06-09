@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * This is an example to connect remote spots
+ * This is an example to connect remote machines
  */
 'use strict'
 
@@ -11,7 +11,7 @@ const sugoTerminal = require('sugo-terminal')
 const CLOUD_URL = 'my-sugo-cloud.example.com'
 
 co(function * () {
-  // Create an terminal
+  // Create a terminal instances
   let terminal = sugoTerminal(CLOUD_URL, {})
 
   // Connect to spot in remote network
