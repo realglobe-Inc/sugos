@@ -115,134 +115,44 @@ Installation
 -----
 
 ```bash
-$ npm install sugos --save
+# Install sugos as a global module
+$ npm install sugos --g
 ```
 
 
 <!-- Section from "doc/guides/01.Installation.md.hbs" End -->
 
-<!-- Section from "doc/guides/02.Usage.md.hbs" Start -->
+<!-- Section from "doc/guides/02.Getting Started.md.hbs" Start -->
 
-<a name="section-doc-guides-02-usage-md"></a>
-Usage
+<a name="section-doc-guides-02-getting-started-md"></a>
+Getting Started
 ---------
 
-#### Running Cloud Server
+3 steps to get started
 
-```javascript
-#!/usr/bin/env node
+### Step01: Setup [sugo-cloud](https://github.com/realglobe-Inc/sugo-cloud)
 
-/**
- * This is an example to setup cloud server
- */
+First of all, you need to setup sugo-cloud on public network so that spot and terminal can access it.
 
-'use strict'
-
-const sugoCloud = require('sugo-cloud')
-
-const co = require('co')
-
-co(function * () {
-  // Start sugo-cloud server
-  let cloud = yield sugoCloud({
-    // Options
-    port: 3000
-  })
-
-  console.log(`SUGO Cloud started at port: ${cloud}`)
-
-  return cloud
-}).catch((err) => { /* ... */ })
-
-```
-
-For more detail, see [sugo-cloud](https://github.com/realglobe-Inc/sugo-cloud)
-
-#### Running Spot Client
-
-```javascript
-#!/usr/bin/env node
-
-/**
- * This is an example to run local spot server
- */
-
-'use strict'
-
-const sugoSpot = require('sugo-spot')
-const co = require('co')
-
-const CLOUD_URL = 'http://my-sugo-cloud.example.com/spots'
-
-co(function * () {
-  let spot = sugoSpot(CLOUD_URL, {
-    key: 'my-spot-01',
-    interfaces: {
-      // Add plugin to provide shell interface
-      shell: require('sugo-spot-shell')({})
-    }
-  })
-
-// Connect to cloud server
-  yield spot.connect()
-}).catch((err) => console.error(err))
-
-```
-
-For more detail, see [sugo-spot](https://github.com/realglobe-Inc/sugo-spot)
+For more details, see [README of sugo-cloud](https://github.com/realglobe-Inc/sugo-cloud#readme)
 
 
-#### Remote Terminal Client
+### Step02: Run [sugo-spot](https://github.com/realglobe-Inc/sugo-spot)
 
-```javascript
-#!/usr/bin/env node
+Run sugo-spot on local network where your machine or sensors exists and access to the sugo-cloud.
 
-/**
- * This is an example to use terminal to connect remote spot
- */
-'use strict'
+For more details, see [README of sugo-spot](https://github.com/realglobe-Inc/sugo-spot#readme)
 
-const co = require('co')
-const sugoTerminal = require('sugo-terminal')
 
-const CLOUD_URL = 'my-sugo-cloud.example.com'
-const TARGET_SPOT_ID = 'my-spot-01'
+### Step03: Use [sugo-terminal](https://github.com/realglobe-Inc/sugo-terminal)
 
-co(function * () {
-  let terminal = sugoTerminal(CLOUD_URL, {})
+Connect to remote spot from sugo-terminal via cloud.
 
-// Connect to the target spot
-  let spot = yield terminal.connect(TARGET_SPOT_ID)
-  let shell = spot.shell() // Get bash interface
-
-  // Trigger ls command on remote spot
-  {
-    let lsResult = yield shell.exec('ls -la /opt/shared')
-    console.log(lsResult)
-  }
-
-  // Pipe std out
-  {
-    let out = (chunk) => process.stdout.write(chunk)
-    shell.on('stdout', out)
-    shell.spawn('tail -f /var/log/app.log') // Trigger tailing without blocking
-    yield new Promise((resolve) => setTimeout(() => resolve(), 3000)) // Block for duration
-    shell.off('stdout', out)
-  }
-
-  // Run reboot command
-  yield shell.exec('reboot')
-}).catch((err) => console.error(err))
+For more details, see [README of sugo-terminal](https://github.com/realglobe-Inc/sugo-terminal#readme)
 
 
 
-```
-
-For more detail, see [sugo-terminal](https://github.com/realglobe-Inc/sugo-terminal)
-
-
-
-<!-- Section from "doc/guides/02.Usage.md.hbs" End -->
+<!-- Section from "doc/guides/02.Getting Started.md.hbs" End -->
 
 
 <!-- Sections Start -->
