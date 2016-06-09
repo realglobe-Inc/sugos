@@ -1,7 +1,7 @@
 {
   "name": "sugos",
   "version": "1.0.0",
-  "description": "Super Ultra Gorgeous Outstanding Special framework for IOT",
+  "description": "Super Ultra Gorgeous Outstanding Special framework for WoT",
   "main": "lib",
   "scripts": {
     "test": "./ci/test.js"
@@ -22,7 +22,10 @@
   "homepage": "https://github.com/realglobe-Inc/sugos#readme",
   "dependencies": {
     "co": "^4.6.0",
-    "stringcase": "^2.0.1"
+    "stringcase": "^2.0.1",
+    "sugo-cloud": "^1.0.2",
+    "sugo-spot": "^1.0.8",
+    "sugo-terminal": "^1.0.3"
   },
   "devDependencies": {
     "ape-covering": "^3.0.3",
