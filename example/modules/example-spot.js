@@ -16,7 +16,7 @@ co(function * () {
     key: 'my-spot-01',
     interfaces: {
       // Add plugin to provide shell interface
-      shell: require('sugo-spot-shell')({})
+      shell: require('sugo-interface-shell')({})
     }
   })
 

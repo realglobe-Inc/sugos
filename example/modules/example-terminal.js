@@ -28,7 +28,7 @@ co(function * () {
   {
     let out = (chunk) => process.stdout.write(chunk)
     shell.on('stdout', out)
-    shell.spawn('tail -f /var/log/app.log') // Trigger tailing without blocking
+    yield shell.spawn('tail -f /var/log/app.log') // Trigger tailing without blocking
     yield new Promise((resolve) => setTimeout(() => resolve(), 3000)) // Block for duration
     shell.off('stdout', out)
   }

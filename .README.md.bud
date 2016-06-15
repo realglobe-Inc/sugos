@@ -14,6 +14,7 @@ module.exports = apeTmpl.readmeMdBud({
   badges: {
     travis: false,
     travisCom: true,
+    travisComToken: 'aeFzCpBZebyaRijpCFmm',
     codeclimate: false,
     codeclimateCoverage: false,
     gemnasium: false,
