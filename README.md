@@ -44,13 +44,9 @@ Super Ultra Gorgeous Outstanding Special framework for WoT
 
 <img src="http://realglobe-inc.github.io/sugos/images/banner.svg" alt="banner" height="40" style="height:40px" 
 />
-<a href="https://github.com/realglobe-Inc/sugo-cloud"><img src="http://realglobe-inc.github.io/sugos/images/banner-cloud.svg" alt="banner" height="40" style="height:40px" 
-/></a>
-<a href="https://github.com/realglobe-Inc/sugo-spot"><img src="http://realglobe-inc.github.io/sugos/images/banner-spot.svg" alt="banner" height="40" style="height:40px" 
-/></a>
-<a href="https://github.com/realglobe-Inc/sugo-terminal"><img src="http://realglobe-inc.github.io/sugos/images/banner-terminal.svg" alt="banner" height="40" style="height:40px" 
-/></a>
-
+<img src="doc/images/nodejs-new-pantone-black.png" height="40" style="height:40px"
+/>
+ 
 SUGOS enable you to control machines from remote network with Javascript.
 
 
@@ -140,15 +136,24 @@ Getting Started
 
 ### Step01: Setup SUGO-Cloud
 
+<a href="https://github.com/realglobe-Inc/sugo-cloud"><img src="http://realglobe-inc.github.io/sugos/images/banner-cloud.svg" alt="banner" height="40" style="height:40px"
+/></a>
+
 First of all, you need to setup [sugo-cloud](https://github.com/realglobe-Inc/sugo-cloud) on public network so that spot and terminal can access it.
 
 
 ### Step02: Run SUGO-Spot
 
+<a href="https://github.com/realglobe-Inc/sugo-spot"><img src="http://realglobe-inc.github.io/sugos/images/banner-spot.svg" alt="banner" height="40" style="height:40px"
+/></a>
+
 Run [sugo-spot](https://github.com/realglobe-Inc/sugo-spot) on local network where your machine or sensors exists and access to the sugo-cloud.
 
 
 ### Step03: Use SUGO-Terminal
+
+<a href="https://github.com/realglobe-Inc/sugo-terminal"><img src="http://realglobe-inc.github.io/sugos/images/banner-terminal.svg" alt="banner" height="40" style="height:40px"
+/></a>
 
 Connect to remote spot from [sugo-terminal](https://github.com/realglobe-Inc/sugo-terminal) via cloud.
 
