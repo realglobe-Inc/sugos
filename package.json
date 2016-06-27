@@ -40,7 +40,7 @@
     "ape-updating": "^4.0.1",
     "coz": "^6.0.3",
     "injectmock": "^2.0.0",
-    "sugos-assets": "^1.1.0"
+    "sugos-assets": "^1.1.1"
   },
   "engines": {
     "node": ">=6",

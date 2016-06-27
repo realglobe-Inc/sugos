@@ -1,5 +1,5 @@
 {
-  "sugo-spot": "https://github.com/realglobe-Inc/sugo-spot",
   "sugo-cloud": "https://github.com/realglobe-Inc/sugo-cloud",
-  "sugo-client": "https://github.com/realglobe-Inc/sugo-client"
+  "sugo-spot": "https://github.com/realglobe-Inc/sugo-spot",
+  "sugo-terminal": "https://github.com/realglobe-Inc/sugo-terminal"
 }

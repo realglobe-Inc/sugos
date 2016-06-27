@@ -24,7 +24,11 @@ module.exports = apeTmpl.readmeMdBud({
   overview: 'doc/overview.md',
   links: require('./doc/links'),
   vars: {
+    bannerHeight: 40,
     banner: 'http://realglobe-inc.github.io/sugos/images/banner.svg',
+    bannerCloud: 'http://realglobe-inc.github.io/sugos/images/banner-cloud.svg',
+    bannerSpot: 'http://realglobe-inc.github.io/sugos/images/banner-spot.svg',
+    bannerTerminal: 'http://realglobe-inc.github.io/sugos/images/banner-terminal.svg',
     favicon: 'http://realglobe-inc.github.io/sugos/images/favicon.svg'
   }
 })

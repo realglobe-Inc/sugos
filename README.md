@@ -42,11 +42,17 @@ Super Ultra Gorgeous Outstanding Special framework for WoT
 <!-- Overview Start -->
 <a name="overview"></a>
 
-![Banner][banner_url]
+<img src="http://realglobe-inc.github.io/sugos/images/banner.svg" alt="banner" height="40" style="height:40px" 
+/>
+<a href="https://github.com/realglobe-Inc/sugo-cloud"><img src="http://realglobe-inc.github.io/sugos/images/banner-cloud.svg" alt="banner" height="40" style="height:40px" 
+/></a>
+<a href="https://github.com/realglobe-Inc/sugo-spot"><img src="http://realglobe-inc.github.io/sugos/images/banner-spot.svg" alt="banner" height="40" style="height:40px" 
+/></a>
+<a href="https://github.com/realglobe-Inc/sugo-terminal"><img src="http://realglobe-inc.github.io/sugos/images/banner-terminal.svg" alt="banner" height="40" style="height:40px" 
+/></a>
 
 SUGOS enable you to control machines from remote network with Javascript.
 
-<img src="" alt="banner" height="40" style="height:40px" />
 
 ```javascript
 #!/usr/bin/env node
@@ -169,8 +175,8 @@ This software is released under the [MIT License](https://github.com/realglobe-I
 Links
 ------
 
-+ [sugo-spot](https://github.com/realglobe-Inc/sugo-spot)
 + [sugo-cloud](https://github.com/realglobe-Inc/sugo-cloud)
-+ [sugo-client](https://github.com/realglobe-Inc/sugo-client)
++ [sugo-spot](https://github.com/realglobe-Inc/sugo-spot)
++ [sugo-terminal](https://github.com/realglobe-Inc/sugo-terminal)
 
 <!-- Links End -->
