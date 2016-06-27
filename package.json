@@ -4,7 +4,8 @@
   "description": "Super Ultra Gorgeous Outstanding Special framework for WoT",
   "main": "lib",
   "scripts": {
-    "test": "./ci/test.js"
+    "test": "./ci/test.js",
+    "prepublish": "./ci/build.js"
   },
   "repository": "realglobe-Inc/sugos",
   "keywords": [
@@ -22,22 +23,24 @@
   "homepage": "https://github.com/realglobe-Inc/sugos#readme",
   "dependencies": {
     "co": "^4.6.0",
-    "stringcase": "^2.0.1",
-    "sugo-cloud": "^1.0.5",
-    "sugo-spot": "^1.0.14",
-    "sugo-terminal": "^1.0.5"
+    "stringcase": "^3.0.1",
+    "sugo-cloud": "^1.2.8",
+    "sugo-spot": "^1.0.15",
+    "sugo-terminal": "^1.0.13"
   },
   "devDependencies": {
     "ape-covering": "^3.0.3",
+    "ape-deploying": "^5.0.2",
     "ape-formatting": "^1.0.0",
-    "ape-releasing": "^3.1.1",
+    "ape-releasing": "^4.0.1",
     "ape-reporting": "^3.0.1",
-    "ape-tasking": "^4.0.1",
+    "ape-tasking": "^4.0.2",
     "ape-testing": "^4.0.0",
-    "ape-tmpl": "^5.0.2",
-    "ape-updating": "^3.0.2",
-    "coz": "^6.0.2",
-    "injectmock": "^2.0.0"
+    "ape-tmpl": "^5.0.6",
+    "ape-updating": "^4.0.1",
+    "coz": "^6.0.3",
+    "injectmock": "^2.0.0",
+    "sugos-assets": "^1.1.0"
   },
   "engines": {
     "node": ">=6",

@@ -23,7 +23,10 @@ module.exports = apeTmpl.readmeMdBud({
   },
   overview: 'doc/overview.md',
   links: require('./doc/links'),
-  vars: {}
+  vars: {
+    banner: 'http://realglobe-inc.github.io/sugos/images/banner.svg',
+    favicon: 'http://realglobe-inc.github.io/sugos/images/favicon.svg'
+  }
 })
 
 if (!module.parent) {

@@ -42,8 +42,11 @@ Super Ultra Gorgeous Outstanding Special framework for WoT
 <!-- Overview Start -->
 <a name="overview"></a>
 
+![Banner][banner_url]
 
-SUGOS enable you to control machines from remote network with Javascript.  
+SUGOS enable you to control machines from remote network with Javascript.
+
+<img src="" alt="banner" height="40" style="height:40px" />
 
 ```javascript
 #!/usr/bin/env node
@@ -84,7 +87,6 @@ co(function * () {
 }).catch((err) => console.error(err))
 
 ```
-
 
 
 <!-- Overview End -->
