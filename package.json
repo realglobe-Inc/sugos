@@ -5,7 +5,7 @@
   "main": "lib",
   "scripts": {
     "test": "./ci/test.js",
-    "prepublish": "./ci/build.js"
+    "prepublish": "./ci/assets.js && ./ci/build.js"
   },
   "repository": "realglobe-Inc/sugos",
   "keywords": [
@@ -39,8 +39,9 @@
     "ape-tmpl": "^5.0.6",
     "ape-updating": "^4.0.1",
     "coz": "^6.0.3",
+    "filecopy": "^2.0.0",
     "injectmock": "^2.0.0",
-    "sugos-assets": "^1.1.1"
+    "sugos-assets": "^1.1.3"
   },
   "engines": {
     "node": ">=6",

@@ -1,6 +1,6 @@
-<img src="{{{vars.banner}}}" alt="banner" height="{{vars.bannerHeight}}" style="height:{{vars.bannerHeight}}px" 
-/>
-<img src="doc/images/nodejs-new-pantone-black.png" height="{{vars.bannerHeight}}" style="height:{{vars.bannerHeight}}px"
+<img src="assets/images/sugos-banner.png" alt="banner" 
+  height=480" 
+  style="height:84px" 
 />
  
 SUGOS enable you to control machines from remote network with Javascript.

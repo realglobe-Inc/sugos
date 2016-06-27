@@ -42,9 +42,9 @@ Super Ultra Gorgeous Outstanding Special framework for WoT
 <!-- Overview Start -->
 <a name="overview"></a>
 
-<img src="http://realglobe-inc.github.io/sugos/images/banner.svg" alt="banner" height="40" style="height:40px" 
-/>
-<img src="doc/images/nodejs-new-pantone-black.png" height="40" style="height:40px"
+<img src="assets/images/sugos-banner.png" alt="banner" 
+  height=480" 
+  style="height:84px" 
 />
  
 SUGOS enable you to control machines from remote network with Javascript.
@@ -107,28 +107,44 @@ Mechanism
 **Sugo-Spots** and **Sugo-Terminals**
 
 
-![Structure Image](./doc/images/structure.png)
+![Structure Image](./assets/images/sugos-structure.png)
 
 
 <!-- Section from "doc/guides/00.Mechanisms.md.hbs" End -->
 
-<!-- Section from "doc/guides/01.Installation.md.hbs" Start -->
+<!-- Section from "doc/guides/10.Requirements.md.hbs" Start -->
 
-<a name="section-doc-guides-01-installation-md"></a>
+<a name="section-doc-guides-10-requirements-md"></a>
+Requirements
+-----
+
+<a href="https://nodejs.org"><img src="assets/images/nodejs-banner.png" alt="banner" height="40" style="height:40px"
+/></a>
+
++ [Node.js ( >=6 )][node_download_url]
+
+[node_download_url]: https://nodejs.org/en/download/
+
+
+<!-- Section from "doc/guides/10.Requirements.md.hbs" End -->
+
+<!-- Section from "doc/guides/11.Installation.md.hbs" Start -->
+
+<a name="section-doc-guides-11-installation-md"></a>
 Installation
 -----
 
 ```bash
 # Install sugos as a global module
-$ npm install sugos --g
+$ npm install -g sugos
 ```
 
 
-<!-- Section from "doc/guides/01.Installation.md.hbs" End -->
+<!-- Section from "doc/guides/11.Installation.md.hbs" End -->
 
-<!-- Section from "doc/guides/02.Getting Started.md.hbs" Start -->
+<!-- Section from "doc/guides/20.Getting Started.md.hbs" Start -->
 
-<a name="section-doc-guides-02-getting-started-md"></a>
+<a name="section-doc-guides-20-getting-started-md"></a>
 Getting Started
 ---------
 
@@ -136,7 +152,7 @@ Getting Started
 
 ### Step01: Setup SUGO-Cloud
 
-<a href="https://github.com/realglobe-Inc/sugo-cloud"><img src="http://realglobe-inc.github.io/sugos/images/banner-cloud.svg" alt="banner" height="40" style="height:40px"
+<a href="https://github.com/realglobe-Inc/sugo-cloud"><img src="assets/images/sugo-cloud-banner.png" alt="banner" height="40" style="height:40px"
 /></a>
 
 First of all, you need to setup [sugo-cloud](https://github.com/realglobe-Inc/sugo-cloud) on public network so that spot and terminal can access it.
@@ -144,7 +160,7 @@ First of all, you need to setup [sugo-cloud](https://github.com/realglobe-Inc/su
 
 ### Step02: Run SUGO-Spot
 
-<a href="https://github.com/realglobe-Inc/sugo-spot"><img src="http://realglobe-inc.github.io/sugos/images/banner-spot.svg" alt="banner" height="40" style="height:40px"
+<a href="https://github.com/realglobe-Inc/sugo-spot"><img src="assets/images/sugo-spot-banner.png" alt="banner" height="40" style="height:40px"
 /></a>
 
 Run [sugo-spot](https://github.com/realglobe-Inc/sugo-spot) on local network where your machine or sensors exists and access to the sugo-cloud.
@@ -152,13 +168,13 @@ Run [sugo-spot](https://github.com/realglobe-Inc/sugo-spot) on local network whe
 
 ### Step03: Use SUGO-Terminal
 
-<a href="https://github.com/realglobe-Inc/sugo-terminal"><img src="http://realglobe-inc.github.io/sugos/images/banner-terminal.svg" alt="banner" height="40" style="height:40px"
+<a href="https://github.com/realglobe-Inc/sugo-terminal"><img src="assets/images/sugo-terminal-banner.png" alt="banner" height="40" style="height:40px"
 /></a>
 
 Connect to remote spot from [sugo-terminal](https://github.com/realglobe-Inc/sugo-terminal) via cloud.
 
 
-<!-- Section from "doc/guides/02.Getting Started.md.hbs" End -->
+<!-- Section from "doc/guides/20.Getting Started.md.hbs" End -->
 
 
 <!-- Sections Start -->
