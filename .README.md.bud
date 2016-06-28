@@ -8,7 +8,9 @@ const apeTmpl = require('ape-tmpl')
 const pkg = require('./package.json')
 
 module.exports = apeTmpl.readmeMdBud({
-  pkg: pkg,
+  pkg,
+  banner: 'assets/images/sugos-banner.png',
+  bannerSize: 148,
   repo: pkg.repository,
   sections: 'doc/guides/*.md.hbs',
   badges: {
