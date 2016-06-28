@@ -41,11 +41,11 @@
     "coz": "^6.0.3",
     "filecopy": "^2.0.0",
     "injectmock": "^2.0.0",
-    "sugos-assets": "^1.1.3"
+    "sugos-assets": "^1.1.4"
   },
   "engines": {
-    "node": ">=6",
-    "npm": ">=3"
+    "node": ">=6.x",
+    "npm": ">=3.x"
   },
   "publishConfig": {
     "registry": "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-local"
