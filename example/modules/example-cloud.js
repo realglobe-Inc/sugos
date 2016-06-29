@@ -17,7 +17,7 @@ co(function * () {
     port: 3000
   })
 
-  console.log(`SUGO Cloud started at port: ${cloud}`)
+  console.log(`SUGO Cloud started at port: ${cloud.port}`)
 
   return cloud
 }).catch((err) => { /* ... */ })
