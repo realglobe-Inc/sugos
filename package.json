@@ -24,8 +24,8 @@
   "dependencies": {
     "co": "^4.6.0",
     "stringcase": "^3.0.1",
-    "sugo-cloud": "^1.2.23",
-    "sugo-spot": "^1.0.18",
+    "sugo-cloud": "^1.2.24",
+    "sugo-spot": "^1.0.20",
     "sugo-terminal": "^1.0.14"
   },
   "devDependencies": {
