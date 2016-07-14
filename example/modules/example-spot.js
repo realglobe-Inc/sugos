@@ -15,7 +15,16 @@ co(function * () {
   let spot = sugoSpot(CLOUD_URL, {
     key: 'my-spot-01',
     interfaces: {
-      // Add plugin to provide shell interface
+      // Declare custom function
+      ping (ctx) {
+        let { params } = ctx
+        let [ pong ] = params // Parameters passed from remote terminal
+        return co(function * () {
+          /* ... */
+          return pong // Return value to pass remote terminal
+        })
+      },
+      // Use interface plugin module
       shell: require('sugo-interface-shell')({})
     }
   })
