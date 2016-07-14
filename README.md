@@ -48,10 +48,10 @@ A high-level RPC framework to make remote controlling super easy.
 What you can do with SUGOS is:
 
 1. Declare a function on a client.
-2. Then, call the function from another client.
+2. Call the function from another client.
 
 <img src="assets/images/sugos-overview.jpeg" 
-    alt="Over view"
+    alt="Overview"
 />
 
 SUGOS magically connect two clients on remote networks, and provides pseudo function interface as if they are on the same environment.
@@ -116,12 +116,12 @@ Getting Started
 
 3 steps to be get started
 
-* [01: Setup SUGO-Cloud](#setup-sugo-cloud)
-* [02: Run SUGO-Spot](#run-sugo-spot)
-* [03: Setup SUGO-Terminal](#use-sugo-terminal)
+1. [Setup SUGO-Cloud](#setup-sugo-cloud)
+2. [Run SUGO-Spot](#run-sugo-spot)
+3. [Setup SUGO-Terminal](#use-sugo-terminal)
 
 <a id="setup-sugo-cloud"></a>
-### 01: Setup SUGO-Cloud
+### Setup SUGO-Cloud
 
 <a href="https://github.com/realglobe-Inc/sugo-cloud"><img src="assets/images/sugo-cloud-banner.png" alt="banner"
                                       height="40" style="height:40px"
@@ -150,9 +150,12 @@ co(function * () {
 
 ```
 
-
 <a id="run-sugo-spot"></a>
-### 02: Run SUGO-Spot
+### Run SUGO-Spot
+
+<a href="https://github.com/realglobe-Inc/sugo-spot"><img src="assets/images/sugo-spot-banner.png" alt="banner"
+                                     height="40" style="height:40px"
+/></a>
 
 Create a spot instance and define interfaces. Then, connect to the cloud server.
 
@@ -178,21 +181,15 @@ co(function * () {
 ```
 
 
-<a href="https://github.com/realglobe-Inc/sugo-spot"><img src="assets/images/sugo-spot-banner.png" alt="banner"
-                                     height="40" style="height:40px"
-/></a>
-
-
 <a id="use-sugo-terminal"></a>
-### 03: Use SUGO-Terminal
-
-
-Create a terminal instance and connect to the spot with key.
-Then get access to the interface and call functions as you like.
+### Use SUGO-Terminal
 
 <a href="https://github.com/realglobe-Inc/sugo-terminal"><img src="assets/images/sugo-terminal-banner.png" alt="banner"
                                          height="40" style="height:40px"
 /></a>
+
+Create a terminal instance and connect to the spot with key.
+Then get access to the interface and call functions as you like.
 
 
 ```javascript
@@ -229,7 +226,7 @@ There are example packages you can try out.
 
 | Name | Description | Deploy to your Heroku | Online Version |
 | ---- | ----------- | ------ | ----- |
-| [sugo-example-say](https://github.com/realglobe-Inc/sugo-example-say) | Example of SUGOS to remote speech. | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sugo-example-say/tree/heroku) | [![http://realglobe-inc.github.io/sugo-example-say/images/favicon.png]](http://sugo-example-say.herokuapp.com) |
+| [sugo-example-say](https://github.com/realglobe-Inc/sugo-example-say) | Example of SUGOS to remote speech. | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sugo-example-say/tree/heroku) | [![Online Version](http://realglobe-inc.github.io/sugo-example-say/images/favicon.png)](http://sugo-example-say.herokuapp.com) |
 
 
 <!-- Section from "doc/guides/21.More Examples.md.hbs" End -->

@@ -1,7 +1,7 @@
 What you can do with SUGOS is:
 
 1. Declare a function on a client.
-2. Then, call the function from another client.
+2. Call the function from another client.
 
 <img src="assets/images/sugos-overview.jpeg" 
     alt="Overview"
