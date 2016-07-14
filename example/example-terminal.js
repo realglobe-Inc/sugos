@@ -11,7 +11,7 @@ const co = require('co')
 const CLOUD_URL = 'http://localhost:3000'
 co(function * () {
   let terminal = sugoTerminal(`${CLOUD_URL}/terminals`)
-  // Connect to terminal with key of spota
+  // Connect to terminal with key of spot
   let spot01 = yield terminal.connect('my-spot-01')
 
   // Simple call-return function
