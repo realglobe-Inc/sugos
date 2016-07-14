@@ -56,8 +56,8 @@ What you can do with SUGOS is:
 
 SUGOS magically connect two clients on remote networks, and provides pseudo function interface as if they are on the same environment.
 
-It also supports event driven architecture and you can emit or listen remote events in [Node.js events](https://nodejs.org/api/events.html#events_events) style.
- This feature greatly helps you to build applications for IoT or Cloud Robotics.
+It also supports event driven architecture. You can emit or listen remote events in [Node.js events](https://nodejs.org/api/events.html#events_events) style.
+This feature greatly helps you to build applications for IoT or Cloud Robotics.
 
 
 <!-- Overview End -->
@@ -195,16 +195,16 @@ co(function * () {
           let [count] = params
           return co(function * () {
             pipe.on('abort', () => {
-              count = 0
-            }) // Listen event from the remote terminal
+              count = -1
+            }) // Listen to events from the remote terminal
             while (count > 0) {
+              count--
+              pipe.emit('tick', { count }) // Emit an event to the remote terminal
               yield new Promise((resolve) =>
                 setTimeout(() => resolve(), 1000)
               )
-              count--
-              pipe.emit('tick', { count }) // Emit event to the remote terminal
             }
-            return 'booom!!'
+            return count === -1 ? 'hiss...' : 'booom!!!'
           })
         }
       }

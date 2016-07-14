@@ -33,16 +33,16 @@ co(function * () {
           let [count] = params
           return co(function * () {
             pipe.on('abort', () => {
-              count = 0
-            }) // Listen event from the remote terminal
+              count = -1
+            }) // Listen to events from the remote terminal
             while (count > 0) {
+              count--
+              pipe.emit('tick', { count }) // Emit an event to the remote terminal
               yield new Promise((resolve) =>
                 setTimeout(() => resolve(), 1000)
               )
-              count--
-              pipe.emit('tick', { count }) // Emit event to the remote terminal
             }
-            return 'booom!!'
+            return count === -1 ? 'hiss...' : 'booom!!!'
           })
         }
       }
