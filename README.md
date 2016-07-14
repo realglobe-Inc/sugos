@@ -157,7 +157,7 @@ co(function * () {
                                      height="40" style="height:40px"
 /></a>
 
-Create a spot instance and define interfaces. Then, connect to the cloud server.
+Create a [SUGO-Spot][sugo_spot_url] instance and define interfaces. Then, connect to the cloud server.
 
 ```javascript
 #!/usr/bin/env node
@@ -188,7 +188,7 @@ co(function * () {
                                          height="40" style="height:40px"
 /></a>
 
-Create a terminal instance and connect to the spot with key.
+Create a [SUGO-Terminal][sugo_terminal_url] instance and connect to the spot with key.
 Then get access to the interface and call functions as you like.
 
 
@@ -224,9 +224,9 @@ More Examples
 
 There are example packages you can try out.
 
-| Name | Description | Deploy to your Heroku | Online Version |
-| ---- | ----------- | ------ | ----- |
-| [sugo-example-say](https://github.com/realglobe-Inc/sugo-example-say) | Example of SUGOS to remote speech. | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sugo-example-say/tree/heroku) | [![Online Version](http://realglobe-inc.github.io/sugo-example-say/images/favicon.png)](http://sugo-example-say.herokuapp.com) |
+| Name | Description | Online Version | Deploy to your Heroku |
+| ---- | ----------- | :----: | :---: |
+| [sugo-example-say](https://github.com/realglobe-Inc/sugo-example-say) | Example of SUGOS to remote speech. | <a href="http://sugo-example-say.herokuapp.com"><img style="height:48px" height="48" src="http://realglobe-inc.github.io/sugo-example-say/images/favicon.png"/></a> | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sugo-example-say/tree/heroku) |
 
 
 <!-- Section from "doc/guides/21.More Examples.md.hbs" End -->
@@ -253,6 +253,19 @@ There are a bunch of related package and there are listed in [sugos-index page][
 
 
 <!-- Section from "doc/guides/30.Related packages.md.hbs" End -->
+
+<!-- Section from "doc/guides/40. Contributors.md.hbs" Start -->
+
+<a name="section-doc-guides-40-contributors-md"></a>
+Contributors
+------------
+
++ [Taka Okunishi]()
++ [Fukuchi Daisuke](https://github.com/fukuchidaisuke)
++ [Fuji Haruka](https://github.com/FujiHaruka)
+
+
+<!-- Section from "doc/guides/40. Contributors.md.hbs" End -->
 
 
 <!-- Sections Start -->

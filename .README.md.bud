@@ -27,7 +27,8 @@ module.exports = apeTmpl.readmeMdBud({
   links: require('./doc/links'),
   vars: {
     bannerHeight: 40,
-    index: require('sugos-index')
+    index: require('sugos-index'),
+    contributors: require('./doc/contributors.json')
   }
 })
 
