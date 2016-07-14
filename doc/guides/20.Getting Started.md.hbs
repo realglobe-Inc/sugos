@@ -1,27 +1,53 @@
 Getting Started
 ---------
 
-3 steps to get started
+3 steps to be get started
 
-### Step01: Setup SUGO-Cloud
+* [01: Setup SUGO-Cloud](#setup-sugo-cloud)
+* [02: Run SUGO-Spot](#run-sugo-spot)
+* [03: Setup SUGO-Terminal](#use-sugo-terminal)
 
-<a href="{{{links.sugo-cloud}}}"><img src="assets/images/sugo-cloud-banner.png" alt="banner" height="{{vars.bannerHeight}}" style="height:{{vars.bannerHeight}}px"
+<a id="setup-sugo-cloud"></a>
+### 01: Setup SUGO-Cloud
+
+<a href="{{{links.sugo-cloud}}}"><img src="assets/images/sugo-cloud-banner.png" alt="banner"
+                                      height="{{vars.bannerHeight}}" style="height:{{vars.bannerHeight}}px"
 /></a>
 
-First of all, you need to setup [sugo-cloud](https://github.com/realglobe-Inc/sugo-cloud) on public network so that spot and terminal can access it.
+Start a [SUGO-Cloud][sugo_cloud_url] server for spots and terminals.
+
+```javascript
+{{{read 'example/example-cloud.js'}}}
+```
 
 
-### Step02: Run SUGO-Spot
+<a id="run-sugo-spot"></a>
+### 02: Run SUGO-Spot
 
-<a href="{{{links.sugo-spot}}}"><img src="assets/images/sugo-spot-banner.png" alt="banner" height="{{vars.bannerHeight}}" style="height:{{vars.bannerHeight}}px"
+Create a spot instance and define interfaces. Then, connect to the cloud server.
+
+```javascript
+{{{read 'example/example-cloud.js'}}}
+```
+
+
+<a href="{{{links.sugo-spot}}}"><img src="assets/images/sugo-spot-banner.png" alt="banner"
+                                     height="{{vars.bannerHeight}}" style="height:{{vars.bannerHeight}}px"
 /></a>
 
-Run [sugo-spot](https://github.com/realglobe-Inc/sugo-spot) and declare interface functions to provide.
+
+<a id="use-sugo-terminal"></a>
+### 03: Use SUGO-Terminal
 
 
-### Step03: Use SUGO-Terminal
+Create a terminal instance and connect to the spot with key.
+Then get access to the interface and call functions as you like.
 
-<a href="{{{links.sugo-terminal}}}"><img src="assets/images/sugo-terminal-banner.png" alt="banner" height="{{vars.bannerHeight}}" style="height:{{vars.bannerHeight}}px"
+<a href="{{{links.sugo-terminal}}}"><img src="assets/images/sugo-terminal-banner.png" alt="banner"
+                                         height="{{vars.bannerHeight}}" style="height:{{vars.bannerHeight}}px"
 /></a>
 
-Connect to the remote spot from [sugo-terminal](https://github.com/realglobe-Inc/sugo-terminal) via cloud.
+
+```javascript
+{{{read 'example/example-cloud.js'}}}
+```

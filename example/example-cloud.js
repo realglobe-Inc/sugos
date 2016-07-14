@@ -1,13 +1,10 @@
 #!/usr/bin/env node
-
 /**
- * This is an example to setup cloud server
+ * This is an example of SUGO-cloud
  */
-
 'use strict'
 
 const sugoCloud = require('sugo-cloud')
-
 const co = require('co')
 
 co(function * () {
@@ -16,8 +13,5 @@ co(function * () {
     // Options
     port: 3000
   })
-
   console.log(`SUGO Cloud started at port: ${cloud.port}`)
-
-  return cloud
 }).catch((err) => { /* ... */ })

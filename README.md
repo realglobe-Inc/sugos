@@ -52,15 +52,12 @@ What you can do with SUGOS is:
 
 <img src="assets/images/sugos-overview.jpeg" 
     alt="Over view"
-    height="256"
-    style="height:256px"
 />
 
-SUGOS magically connect two clients on remote networks and provides pseudo function interface as they are on the same environment.
+SUGOS magically connect two clients on remote networks, and provides pseudo function interface as if they are on the same environment.
 
 It also supports event driven architecture and you can emit or listen remote events in [Node.js events](https://nodejs.org/api/events.html#events_events) style.
- 
-This feature greatly helps you to build an application for IoT or Cloud Robotics.
+ This feature greatly helps you to build an application for IoT or Cloud Robotics.
 
 
 <!-- Overview End -->
@@ -117,33 +114,125 @@ $ npm install -g sugos
 Getting Started
 ---------
 
-3 steps to get started
+3 steps to be get started
 
-### Step01: Setup SUGO-Cloud
+* [01: Setup SUGO-Cloud](#setup-sugo-cloud)
+* [02: Run SUGO-Spot](#run-sugo-spot)
+* [03: Setup SUGO-Terminal](#use-sugo-terminal)
 
-<a href="https://github.com/realglobe-Inc/sugo-cloud"><img src="assets/images/sugo-cloud-banner.png" alt="banner" height="40" style="height:40px"
+<a id="setup-sugo-cloud"></a>
+### 01: Setup SUGO-Cloud
+
+<a href="https://github.com/realglobe-Inc/sugo-cloud"><img src="assets/images/sugo-cloud-banner.png" alt="banner"
+                                      height="40" style="height:40px"
 /></a>
 
-First of all, you need to setup [sugo-cloud](https://github.com/realglobe-Inc/sugo-cloud) on public network so that spot and terminal can access it.
+Start a [SUGO-Cloud][sugo_cloud_url] server for spots and terminals.
+
+```javascript
+#!/usr/bin/env node
+/**
+ * This is an example of SUGO-cloud
+ */
+'use strict'
+
+const sugoCloud = require('sugo-cloud')
+const co = require('co')
+
+co(function * () {
+  // Start sugo-cloud server
+  let cloud = yield sugoCloud({
+    // Options
+    port: 3000
+  })
+  console.log(`SUGO Cloud started at port: ${cloud.port}`)
+}).catch((err) => { /* ... */ })
+
+```
 
 
-### Step02: Run SUGO-Spot
+<a id="run-sugo-spot"></a>
+### 02: Run SUGO-Spot
 
-<a href="https://github.com/realglobe-Inc/sugo-spot"><img src="assets/images/sugo-spot-banner.png" alt="banner" height="40" style="height:40px"
+Create a spot instance and define interfaces. Then, connect to the cloud server.
+
+```javascript
+#!/usr/bin/env node
+/**
+ * This is an example of SUGO-cloud
+ */
+'use strict'
+
+const sugoCloud = require('sugo-cloud')
+const co = require('co')
+
+co(function * () {
+  // Start sugo-cloud server
+  let cloud = yield sugoCloud({
+    // Options
+    port: 3000
+  })
+  console.log(`SUGO Cloud started at port: ${cloud.port}`)
+}).catch((err) => { /* ... */ })
+
+```
+
+
+<a href="https://github.com/realglobe-Inc/sugo-spot"><img src="assets/images/sugo-spot-banner.png" alt="banner"
+                                     height="40" style="height:40px"
 /></a>
 
-Run [sugo-spot](https://github.com/realglobe-Inc/sugo-spot) and declare interface functions to provide.
+
+<a id="use-sugo-terminal"></a>
+### 03: Use SUGO-Terminal
 
 
-### Step03: Use SUGO-Terminal
+Create a terminal instance and connect to the spot with key.
+Then get access to the interface and call functions as you like.
 
-<a href="https://github.com/realglobe-Inc/sugo-terminal"><img src="assets/images/sugo-terminal-banner.png" alt="banner" height="40" style="height:40px"
+<a href="https://github.com/realglobe-Inc/sugo-terminal"><img src="assets/images/sugo-terminal-banner.png" alt="banner"
+                                         height="40" style="height:40px"
 /></a>
 
-Connect to the remote spot from [sugo-terminal](https://github.com/realglobe-Inc/sugo-terminal) via cloud.
+
+```javascript
+#!/usr/bin/env node
+/**
+ * This is an example of SUGO-cloud
+ */
+'use strict'
+
+const sugoCloud = require('sugo-cloud')
+const co = require('co')
+
+co(function * () {
+  // Start sugo-cloud server
+  let cloud = yield sugoCloud({
+    // Options
+    port: 3000
+  })
+  console.log(`SUGO Cloud started at port: ${cloud.port}`)
+}).catch((err) => { /* ... */ })
+
+```
 
 
 <!-- Section from "doc/guides/20.Getting Started.md.hbs" End -->
+
+<!-- Section from "doc/guides/21.More Examples.md.hbs" Start -->
+
+<a name="section-doc-guides-21-more-examples-md"></a>
+More Examples
+---------
+
+There are example packages you can try out.
+
+| Name | Description | Deploy to your Heroku | Online Version |
+| ---- | ----------- | ------ | ----- |
+| [sugo-example-say](https://github.com/realglobe-Inc/sugo-example-say) | Example of SUGOS to remote speech. | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sugo-example-say/tree/heroku) | [![http://realglobe-inc.github.io/sugo-example-say/images/favicon.png]](http://sugo-example-say.herokuapp.com) |
+
+
+<!-- Section from "doc/guides/21.More Examples.md.hbs" End -->
 
 <!-- Section from "doc/guides/30.Related packages.md.hbs" Start -->
 

@@ -4,9 +4,7 @@ What you can do with SUGOS is:
 2. Then, call the function from another client.
 
 <img src="assets/images/sugos-overview.jpeg" 
-    alt="Over view"
-    height="256"
-    style="height:256px"
+    alt="Overview"
 />
 
 SUGOS magically connect two clients on remote networks, and provides pseudo function interface as if they are on the same environment.
