@@ -116,12 +116,12 @@ Getting Started
 
 3 steps to be get started
 
-1. [Setup SUGO-Cloud](#setup-sugo-cloud)
-2. [Run SUGO-Spot](#run-sugo-spot)
-3. [Setup SUGO-Terminal](#use-sugo-terminal)
+1. [Setting up SUGO-Cloud](#setup-sugo-cloud)
+2. [Running SUGO-Spot](#run-sugo-spot)
+3. [Using SUGO-Terminal](#use-sugo-terminal)
 
 <a id="setup-sugo-cloud"></a>
-### Setup SUGO-Cloud
+### Setting up SUGO-Cloud
 
 <a href="https://github.com/realglobe-Inc/sugo-cloud"><img src="assets/images/sugo-cloud-banner.png" alt="banner"
                                       height="40" style="height:40px"
@@ -151,7 +151,7 @@ co(function * () {
 ```
 
 <a id="run-sugo-spot"></a>
-### Run SUGO-Spot
+### Running SUGO-Spot
 
 <a href="https://github.com/realglobe-Inc/sugo-spot"><img src="assets/images/sugo-spot-banner.png" alt="banner"
                                      height="40" style="height:40px"
@@ -217,7 +217,7 @@ co(function * () {
 
 
 <a id="use-sugo-terminal"></a>
-### Use SUGO-Terminal
+### Using SUGO-Terminal
 
 <a href="https://github.com/realglobe-Inc/sugo-terminal"><img src="assets/images/sugo-terminal-banner.png" alt="banner"
                                          height="40" style="height:40px"
@@ -336,10 +336,12 @@ Links
 + [sugo-spot][sugo_spot_url]
 + [sugo-terminal][sugo_terminal_url]
 + [sugos-index][sugos_index_url]
++ [sugos.tech][sugos_tech_url]
 
 [sugo_cloud_url]: https://github.com/realglobe-Inc/sugo-cloud
 [sugo_spot_url]: https://github.com/realglobe-Inc/sugo-spot
 [sugo_terminal_url]: https://github.com/realglobe-Inc/sugo-terminal
 [sugos_index_url]: https://github.com/realglobe-Inc/sugos-index#readme
+[sugos_tech_url]: http://www.sugos.tech
 
 <!-- Links End -->
