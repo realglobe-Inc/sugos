@@ -15,9 +15,8 @@ co(function * () {
     key: 'my-spot-01',
     /** Interface modules to exports */
     interfaces: {
-      // Define modules
       tableTennis: {
-        // Example of simple call-return interface
+        // Example of simple call-return function
         ping (ctx) {
           let { params } = ctx
           let [ pong ] = params // Params passed from the remote terminal
@@ -27,8 +26,8 @@ co(function * () {
           })
         }
       },
-      // Example of event emitting interface
       timebomb: {
+        // Example of event emitting function
         countdown (ctx) {
           let { params, pipe } = ctx
           let [count] = params

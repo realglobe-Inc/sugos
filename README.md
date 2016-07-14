@@ -57,7 +57,7 @@ What you can do with SUGOS is:
 SUGOS magically connect two clients on remote networks, and provides pseudo function interface as if they are on the same environment.
 
 It also supports event driven architecture and you can emit or listen remote events in [Node.js events](https://nodejs.org/api/events.html#events_events) style.
- This feature greatly helps you to build an application for IoT or Cloud Robotics.
+ This feature greatly helps you to build applications for IoT or Cloud Robotics.
 
 
 <!-- Overview End -->
@@ -160,23 +160,58 @@ co(function * () {
 Create a [SUGO-Spot][sugo_spot_url] instance and define interfaces. Then, connect to the cloud server.
 
 ```javascript
-#!/usr/bin/env node
+#!/usr/bin/env
+
 /**
- * This is an example of SUGO-cloud
+ * This is an example of SUGO-Spot
  */
 'use strict'
 
-const sugoCloud = require('sugo-cloud')
+const sugoSpot = require('sugo-spot')
 const co = require('co')
 
+const CLOUD_URL = 'http://localhost:3000'
 co(function * () {
-  // Start sugo-cloud server
-  let cloud = yield sugoCloud({
-    // Options
-    port: 3000
+  let spot = sugoSpot(`${CLOUD_URL}/spots`, {
+    /** Name to identify this spot on the cloud */
+    key: 'my-spot-01',
+    /** Interface modules to exports */
+    interfaces: {
+      tableTennis: {
+        // Example of simple call-return function
+        ping (ctx) {
+          let { params } = ctx
+          let [ pong ] = params // Params passed from the remote terminal
+          return co(function * () {
+            /* ... */
+            return `"${pong}" from spot!` // Return to the remote terminal
+          })
+        }
+      },
+      timebomb: {
+        // Example of event emitting function
+        countdown (ctx) {
+          let { params, pipe } = ctx
+          let [count] = params
+          return co(function * () {
+            pipe.on('abort', () => {
+              count = 0
+            }) // Listen event from the remote terminal
+            while (count > 0) {
+              yield new Promise((resolve) =>
+                setTimeout(() => resolve(), 1000)
+              )
+              count--
+              pipe.emit('tick', { count }) // Emit event to the remote terminal
+            }
+            return 'booom!!'
+          })
+        }
+      }
+    }
   })
-  console.log(`SUGO Cloud started at port: ${cloud.port}`)
-}).catch((err) => { /* ... */ })
+  yield spot.connect() // Connect to cloud server
+}).catch((err) => console.error(err))
 
 ```
 
@@ -193,23 +228,33 @@ Then get access to the interface and call functions as you like.
 
 
 ```javascript
-#!/usr/bin/env node
+#!/usr/bin/env
+
 /**
- * This is an example of SUGO-cloud
+ * This is an example of SUGO-Terminal
  */
 'use strict'
 
-const sugoCloud = require('sugo-cloud')
+const sugoTerminal = require('sugo-terminal')
 const co = require('co')
 
+const CLOUD_URL = 'http://localhost:3000'
 co(function * () {
-  // Start sugo-cloud server
-  let cloud = yield sugoCloud({
-    // Options
-    port: 3000
-  })
-  console.log(`SUGO Cloud started at port: ${cloud.port}`)
-}).catch((err) => { /* ... */ })
+  let terminal = sugoTerminal(`${CLOUD_URL}/terminals`)
+  // Connect to terminal with key of spota
+  let spot01 = yield terminal.connect('my-spot-01')
+
+  // Simple call-return function
+  let tableTennis = spot01.tableTennis()
+  let pong = yield tableTennis.ping('hey!')
+  console.log(pong) // -> `"hey!" from spot!`
+
+  // Event emitting
+  let timebomb = spot01.timebomb()
+  timebomb.on('tick', (data) => console.log(`tick: ${data.count}`))
+  let booom = yield timebomb.countdown(10)
+  console.log(booom)
+}).catch((err) => console.error(err))
 
 ```
 

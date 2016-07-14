@@ -41,7 +41,7 @@
     "coz": "^6.0.3",
     "filecopy": "^2.0.0",
     "injectmock": "^2.0.0",
-    "sugos-assets": "^1.1.12",
+    "sugos-assets": "^1.1.13",
     "sugos-index": "^1.0.4"
   },
   "engines": {
