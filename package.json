@@ -1,7 +1,7 @@
 {
   "name": "sugos",
   "version": "1.0.2",
-  "description": "Super Ultra Gorgeous Outstanding Special framework for WoT",
+  "description": "A high-level RPC framework to make remote controlling super easy",
   "main": "lib",
   "scripts": {
     "test": "./ci/test.js",
@@ -16,7 +16,7 @@
     "email": "okunishitaka.com@gmail.com",
     "url": "http://okunishitaka.com"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/realglobe-Inc/sugos/issues"
   },
@@ -24,7 +24,7 @@
   "dependencies": {
     "co": "^4.6.0",
     "stringcase": "^3.0.1",
-    "sugo-cloud": "^1.2.9",
+    "sugo-cloud": "^1.2.19",
     "sugo-spot": "^1.0.16",
     "sugo-terminal": "^1.0.14"
   },
@@ -36,12 +36,13 @@
     "ape-reporting": "^3.0.1",
     "ape-tasking": "^4.0.2",
     "ape-testing": "^4.0.0",
-    "ape-tmpl": "^5.0.10",
-    "ape-updating": "^4.0.1",
+    "ape-tmpl": "^5.0.11",
+    "ape-updating": "^4.0.2",
     "coz": "^6.0.3",
     "filecopy": "^2.0.0",
     "injectmock": "^2.0.0",
-    "sugos-assets": "^1.1.5"
+    "sugos-assets": "^1.1.11",
+    "sugos-index": "^1.0.3"
   },
   "engines": {
     "node": ">=6.x",
