@@ -17,13 +17,33 @@ co(function * () {
     interfaces: {
       // Define modules
       tableTennis: {
-        // Define methods
+        // Example of simple call-return interface
         ping (ctx) {
           let { params } = ctx
-          let [ pong ] = params // Params passed from terminal
+          let [ pong ] = params // Params passed from the remote terminal
           return co(function * () {
             /* ... */
-            return `"${pong}" from spot!`
+            return `"${pong}" from spot!` // Return to the remote terminal
+          })
+        }
+      },
+      // Example of event emitting interface
+      timebomb: {
+        countdown (ctx) {
+          let { params, pipe } = ctx
+          let [count] = params
+          return co(function * () {
+            pipe.on('abort', () => {
+              count = 0
+            }) // Listen event from the remote terminal
+            while (count > 0) {
+              yield new Promise((resolve) =>
+                setTimeout(() => resolve(), 1000)
+              )
+              count--
+              pipe.emit('tick', { count }) // Emit event to the remote terminal
+            }
+            return 'booom!!'
           })
         }
       }

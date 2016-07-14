@@ -14,8 +14,14 @@ co(function * () {
   // Connect to terminal with key of spota
   let spot01 = yield terminal.connect('my-spot-01')
 
-  // Access to interface
+  // Simple call-return function
   let tableTennis = spot01.tableTennis()
   let pong = yield tableTennis.ping('hey!')
   console.log(pong) // -> `"hey!" from spot!`
+
+  // Event emitting
+  let timebomb = spot01.timebomb()
+  timebomb.on('tick', (data) => console.log(`tick: ${data.count}`))
+  let booom = yield timebomb.countdown(10)
+  console.log(booom)
 }).catch((err) => console.error(err))
