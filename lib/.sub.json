@@ -1,5 +1,5 @@
 {
-  "terminal": "sugo-terminal",
+  "terminal": "sugo-caller",
   "cloud": "sugo-cloud",
-  "spot": "sugo-spot"
+  "spot": "sugo-actor"
 }

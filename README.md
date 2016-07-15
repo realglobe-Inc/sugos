@@ -116,18 +116,18 @@ Getting Started
 
 3 steps to be get started
 
-1. [Setting up SUGO-Cloud](#setup-sugo-cloud)
-2. [Running SUGO-Spot](#run-sugo-spot)
-3. [Using SUGO-Terminal](#use-sugo-terminal)
+1. [Prepare SUGO-Cloud](#setup-sugo-cloud)
+2. [Declare modules with SUGO-Actor](#run-sugo-actor)
+3. [Access to modules from SUGO-Caller](#use-sugo-caller)
 
 <a id="setup-sugo-cloud"></a>
-### Setting up SUGO-Cloud
+### Prepare SUGO-Cloud
 
 <a href="https://github.com/realglobe-Inc/sugo-cloud"><img src="assets/images/sugo-cloud-banner.png" alt="banner"
                                       height="40" style="height:40px"
 /></a>
 
-Start a [SUGO-Cloud][sugo_cloud_url] server for spots and terminals.
+Start a [SUGO-Cloud][sugo_cloud_url] server for actors and callers.
 
 ```javascript
 #!/usr/bin/env node
@@ -150,33 +150,32 @@ co(function * () {
 
 ```
 
-<a id="run-sugo-spot"></a>
-### Running SUGO-Spot
+<a id="run-sugo-actor"></a>
+### Declare modules with SUGO-Actor
 
-<a href="https://github.com/realglobe-Inc/sugo-spot"><img src="assets/images/sugo-spot-banner.png" alt="banner"
+<a href="https://github.com/realglobe-Inc/sugo-actor"><img src="assets/images/sugo-actor-banner.png" alt="banner"
                                      height="40" style="height:40px"
 /></a>
 
-Create a [SUGO-Spot][sugo_spot_url] instance and define interfaces. Then, connect to the cloud server.
+Create a [SUGO-Actor][sugo_actor_url] instance and define interfaces. Then, connect to the cloud server.
 
 ```javascript
 #!/usr/bin/env
 
 /**
- * This is an example of SUGO-Spot
+ * This is an example of SUGO-Actor
  */
 'use strict'
 
-const sugoSpot = require('sugo-spot')
+const sugoActor = require('sugo-actor')
 const co = require('co')
 
 const CLOUD_URL = 'http://localhost:3000'
 co(function * () {
-  let spot = sugoSpot(`${CLOUD_URL}/spots`, {
-    /** Name to identify this spot on the cloud */
-    key: 'my-spot-01',
-    /** Interface modules to exports */
-    interfaces: {
+  let actor = sugoActor(`${CLOUD_URL}/actors`, {
+    /** Name to identify this actor on the cloud */
+    key: 'my-actor-01',
+    modules: {
       tableTennis: {
         // Example of simple call-return function
         ping (ctx) {
@@ -184,46 +183,28 @@ co(function * () {
           let [ pong ] = params // Params passed from the remote terminal
           return co(function * () {
             /* ... */
-            return `"${pong}" from spot!` // Return to the remote terminal
+            return `"${pong}" from actor!` // Return to the remote terminal
           })
         }
       },
-      timebomb: {
-        // Example of event emitting function
-        countdown (ctx) {
-          let { params, pipe } = ctx
-          let [count] = params
-          return co(function * () {
-            pipe.on('abort', () => {
-              count = -1
-            }) // Listen to events from the remote terminal
-            while (count > 0) {
-              count--
-              pipe.emit('tick', { count }) // Emit an event to the remote terminal
-              yield new Promise((resolve) =>
-                setTimeout(() => resolve(), 1000)
-              )
-            }
-            return count === -1 ? 'hiss...' : 'booom!!!'
-          })
-        }
-      }
+      // Load plugin module
+      timeBomb: require('./example-time-bomb-module')({})
     }
   })
-  yield spot.connect() // Connect to cloud server
+  yield actor.connect() // Connect to cloud server
 }).catch((err) => console.error(err))
 
 ```
 
 
-<a id="use-sugo-terminal"></a>
-### Using SUGO-Terminal
+<a id="use-sugo-caller"></a>
+### Access to modules from SUGO-Caller
 
-<a href="https://github.com/realglobe-Inc/sugo-terminal"><img src="assets/images/sugo-terminal-banner.png" alt="banner"
+<a href="https://github.com/realglobe-Inc/sugo-caller"><img src="assets/images/sugo-caller-banner.png" alt="banner"
                                          height="40" style="height:40px"
 /></a>
 
-Create a [SUGO-Terminal][sugo_terminal_url] instance and connect to the spot with key.
+Create a [SUGO-Caller][sugo_caller_url] instance and connect to the actor with key.
 Then get access to the interface and call functions as you like.
 
 
@@ -231,28 +212,28 @@ Then get access to the interface and call functions as you like.
 #!/usr/bin/env
 
 /**
- * This is an example of SUGO-Terminal
+ * This is an example of SUGO-Caller
  */
 'use strict'
 
-const sugoTerminal = require('sugo-terminal')
+const sugoCaller = require('sugo-caller')
 const co = require('co')
 
 const CLOUD_URL = 'http://localhost:3000'
 co(function * () {
-  let terminal = sugoTerminal(`${CLOUD_URL}/terminals`)
-  // Connect to terminal with key of spot
-  let spot01 = yield terminal.connect('my-spot-01')
+  let caller = sugoCaller(`${CLOUD_URL}/callers`)
+  // Connect to caller with key of spot
+  let actor01 = yield caller.connect('my-actor-01')
 
   // Simple call-return function
-  let tableTennis = spot01.tableTennis()
+  let tableTennis = actor01.tableTennis()
   let pong = yield tableTennis.ping('hey!')
-  console.log(pong) // -> `"hey!" from spot!`
+  console.log(pong) // -> `"hey!" from call!`
 
   // Event emitting
-  let timebomb = spot01.timebomb()
-  timebomb.on('tick', (data) => console.log(`tick: ${data.count}`))
-  let booom = yield timebomb.countdown(10)
+  let timeBomb = actor01.timeBomb()
+  timeBomb.on('tick', (data) => console.log(`tick: ${data.count}`))
+  let booom = yield timeBomb.countdown(10)
   console.log(booom)
 }).catch((err) => console.error(err))
 
@@ -287,11 +268,11 @@ There are a bunch of related package and there are listed in [sugos-index page][
 + [Core packages](https://github.com/realglobe-Inc/sugos-index#package-group-Core) - Core of SUGOS
 + [Demo packages](https://github.com/realglobe-Inc/sugos-index#package-group-Demo) - Demo for SUGOS scaffolding
 + [Example packages](https://github.com/realglobe-Inc/sugos-index#package-group-Example) - Example project using SUGOS framework
-+ [Interface packages](https://github.com/realglobe-Inc/sugos-index#package-group-Interface) - Interface plugins for SUGOS-Spot
++ [Module packages](https://github.com/realglobe-Inc/sugos-index#package-group-Module) - Module plugins for SUGOS-Actor
 + [Middleware packages](https://github.com/realglobe-Inc/sugos-index#package-group-Middleware) - Middleware plugins for SUGO-Cloud
 + [Endpoint packages](https://github.com/realglobe-Inc/sugos-index#package-group-Endpoint) - Endpoint plugins for SUGO-Cloud
 + [Agent packages](https://github.com/realglobe-Inc/sugos-index#package-group-Agent) - Agent of endpoints
-+ [Helper packages](https://github.com/realglobe-Inc/sugos-index#package-group-Helper) - Helper modules.
++ [Helper packages](https://github.com/realglobe-Inc/sugos-index#package-group-Helper) - Helper packages.
 
 
 [sugos_index_url]: https://github.com/realglobe-Inc/sugos-index#readme
@@ -333,14 +314,14 @@ Links
 ------
 
 + [sugo-cloud][sugo_cloud_url]
-+ [sugo-spot][sugo_spot_url]
-+ [sugo-terminal][sugo_terminal_url]
++ [sugo-actor][sugo_actor_url]
++ [sugo-caller][sugo_caller_url]
 + [sugos-index][sugos_index_url]
 + [sugos.tech][sugos_tech_url]
 
 [sugo_cloud_url]: https://github.com/realglobe-Inc/sugo-cloud
-[sugo_spot_url]: https://github.com/realglobe-Inc/sugo-spot
-[sugo_terminal_url]: https://github.com/realglobe-Inc/sugo-terminal
+[sugo_actor_url]: https://github.com/realglobe-Inc/sugo-actor
+[sugo_caller_url]: https://github.com/realglobe-Inc/sugo-caller
 [sugos_index_url]: https://github.com/realglobe-Inc/sugos-index#readme
 [sugos_tech_url]: http://www.sugos.tech
 

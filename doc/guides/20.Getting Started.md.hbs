@@ -3,48 +3,48 @@ Getting Started
 
 3 steps to be get started
 
-1. [Setting up SUGO-Cloud](#setup-sugo-cloud)
-2. [Running SUGO-Spot](#run-sugo-spot)
-3. [Using SUGO-Terminal](#use-sugo-terminal)
+1. [Prepare SUGO-Cloud](#setup-sugo-cloud)
+2. [Declare modules on SUGO-Actor](#run-sugo-actor)
+3. [Access to modules from SUGO-Caller](#use-sugo-caller)
 
 <a id="setup-sugo-cloud"></a>
-### Setting up SUGO-Cloud
+### Prepare SUGO-Cloud
 
 <a href="{{{links.sugo-cloud}}}"><img src="assets/images/sugo-cloud-banner.png" alt="banner"
                                       height="{{vars.bannerHeight}}" style="height:{{vars.bannerHeight}}px"
 /></a>
 
-Start a [SUGO-Cloud][sugo_cloud_url] server for spots and terminals.
+Start a [SUGO-Cloud][sugo_cloud_url] server for actors and callers.
 
 ```javascript
 {{{read 'example/example-cloud.js'}}}
 ```
 
-<a id="run-sugo-spot"></a>
-### Running SUGO-Spot
+<a id="run-sugo-actor"></a>
+### Declare modules on SUGO-Actor
 
-<a href="{{{links.sugo-spot}}}"><img src="assets/images/sugo-spot-banner.png" alt="banner"
+<a href="{{{links.sugo-actor}}}"><img src="assets/images/sugo-actor-banner.png" alt="banner"
                                      height="{{vars.bannerHeight}}" style="height:{{vars.bannerHeight}}px"
 /></a>
 
-Create a [SUGO-Spot][sugo_spot_url] instance and define interfaces. Then, connect to the cloud server.
+Create a [SUGO-Actor][sugo_actor_url] instance and define interfaces. Then, connect to the cloud server.
 
 ```javascript
-{{{read 'example/example-spot.js'}}}
+{{{read 'example/example-actor.js'}}}
 ```
 
 
-<a id="use-sugo-terminal"></a>
-### Using SUGO-Terminal
+<a id="use-sugo-caller"></a>
+### Access to modules from SUGO-Caller
 
-<a href="{{{links.sugo-terminal}}}"><img src="assets/images/sugo-terminal-banner.png" alt="banner"
+<a href="{{{links.sugo-caller}}}"><img src="assets/images/sugo-caller-banner.png" alt="banner"
                                          height="{{vars.bannerHeight}}" style="height:{{vars.bannerHeight}}px"
 /></a>
 
-Create a [SUGO-Terminal][sugo_terminal_url] instance and connect to the spot with key.
+Create a [SUGO-Caller][sugo_caller_url] instance and connect to the actor with key.
 Then get access to the interface and call functions as you like.
 
 
 ```javascript
-{{{read 'example/example-terminal.js'}}}
+{{{read 'example/example-caller.js'}}}
 ```
