@@ -15,9 +15,9 @@ const co = require('co')
 
 co(function * () {
   let cloud = fork(exampleCloud, { stdio: 'inherit' })
-  yield asleep(500)
+  yield asleep(800)
   let spot = fork(exampleActor, { stdio: 'inherit' })
-  yield asleep(500)
+  yield asleep(800)
   let caller = fork(exampleCaller, { stdio: 'inherit' })
   yield asleep(11000)
   caller.kill()

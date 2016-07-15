@@ -9,16 +9,15 @@ const co = require('co')
 function exampleTimeBombModule (config) {
   return {
     // Example of event emitting function
-    countDown (ctx) {
-      let { params, pipe } = ctx
-      let [count] = params
+    countDown (count) {
+      const s = this
       return co(function * () {
-        pipe.on('abort', () => {
+        s.on('abort', () => {
           count = -1
-        }) // Listen to events from the remote terminal
+        }) // Listen to events from the caller
         while (count > 0) {
           count--
-          pipe.emit('tick', { count }) // Emit an event to the remote terminal
+          s.emit('tick', { count }) // Emit an event to the caller
           yield new Promise((resolve) =>
             setTimeout(() => resolve(), 1000)
           )

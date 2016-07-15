@@ -73,7 +73,6 @@ This feature greatly helps you to build applications for IoT or Cloud Robotics.
 Table of Contents
 ----------------
 
-- [Table of Contents](#table-of-contents)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Getting Started](#getting-started)
@@ -205,10 +204,8 @@ co(function * () {
     key: 'my-actor-01',
     modules: {
       tableTennis: {
-        // Example of simple call-return function
-        ping (ctx) {
-          let { params } = ctx
-          let [ pong ] = params // Params passed from the remote terminal
+        // Example of a simple call-return function
+        ping (pong = 'default pong!') {
           return co(function * () {
             /* ... */
             return `"${pong}" from actor!` // Return to the remote terminal
@@ -279,7 +276,7 @@ Advanced Usage
 
 ### Using Event-Emit Interface
 
-On actors, each module methods receives an instance of [EventEmitter Class][event_emitter_url] as `ctx.pipe`.
+On actors, each module methods is an instance of [EventEmitter Class][event_emitter_url].
 This allows modules to interact with remote caller via `.on(ev, handler)` and `.emit(ev, data)` functions.
 
 ```javascript
@@ -294,16 +291,15 @@ const co = require('co')
 function exampleTimeBombModule (config) {
   return {
     // Example of event emitting function
-    countDown (ctx) {
-      let { params, pipe } = ctx
-      let [count] = params
+    countDown (count) {
+      const s = this
       return co(function * () {
-        pipe.on('abort', () => {
+        s.on('abort', () => {
           count = -1
         }) // Listen to events from the remote terminal
         while (count > 0) {
           count--
-          pipe.emit('tick', { count }) // Emit an event to the remote terminal
+          s.emit('tick', { count }) // Emit an event to the remote terminal
           yield new Promise((resolve) =>
             setTimeout(() => resolve(), 1000)
           )

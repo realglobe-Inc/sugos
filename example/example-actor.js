@@ -15,10 +15,8 @@ co(function * () {
     key: 'my-actor-01',
     modules: {
       tableTennis: {
-        // Example of simple call-return function
-        ping (ctx) {
-          let { params } = ctx
-          let [ pong ] = params // Params passed from the remote terminal
+        // Example of a simple call-return function
+        ping (pong = 'default pong!') {
           return co(function * () {
             /* ... */
             return `"${pong}" from actor!` // Return to the remote terminal

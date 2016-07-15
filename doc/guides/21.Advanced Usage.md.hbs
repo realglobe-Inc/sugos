@@ -3,7 +3,7 @@ Advanced Usage
 
 ### Using Event-Emit Interface
 
-On actors, each module methods receives an instance of [EventEmitter Class][event_emitter_url] as `ctx.pipe`.
+On actors, each module methods is an instance of [EventEmitter Class][event_emitter_url].
 This allows modules to interact with remote caller via `.on(ev, handler)` and `.emit(ev, data)` functions.
 
 ```javascript

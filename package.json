@@ -24,9 +24,9 @@
   "dependencies": {
     "co": "^4.6.0",
     "stringcase": "^3.0.1",
-    "sugo-actor": "^2.0.3",
+    "sugo-actor": "^3.0.0",
     "sugo-caller": "^2.0.2",
-    "sugo-cloud": "^2.0.0"
+    "sugo-cloud": "^2.0.1"
   },
   "devDependencies": {
     "ape-covering": "^3.0.3",
