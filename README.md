@@ -66,9 +66,35 @@ This feature greatly helps you to build applications for IoT or Cloud Robotics.
 <!-- Sections Start -->
 <a name="sections"></a>
 
+<!-- Section from "doc/guides/00.TOC.md.hbs" Start -->
+
+<a name="section-doc-guides-00-t-o-c-md"></a>
+
+Table of Contents
+----------------
+
+- [Table of Contents](#table-of-contents)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+  * [Prepare SUGO-Cloud](#prepare-sugo-cloud)
+  * [Declare modules on SUGO-Actor](#declare-modules-on-sugo-actor)
+  * [Access to modules from SUGO-Caller](#access-to-modules-from-sugo-caller)
+- [Advanced Usage](#advanced-usage)
+  * [Using Event-Emit Interface](#using-event-emit-interface)
+- [More Examples](#more-examples)
+- [Related Packages](#related-packages)
+- [Contributors](#contributors)
+- [License](#license)
+- [Links](#links)
+
+
+<!-- Section from "doc/guides/00.TOC.md.hbs" End -->
+
 <!-- Section from "doc/guides/10.Requirements.md.hbs" Start -->
 
 <a name="section-doc-guides-10-requirements-md"></a>
+
 Requirements
 -----
 
@@ -97,6 +123,7 @@ Requirements
 <!-- Section from "doc/guides/11.Installation.md.hbs" Start -->
 
 <a name="section-doc-guides-11-installation-md"></a>
+
 Installation
 -----
 
@@ -111,6 +138,7 @@ $ npm install -g sugos
 <!-- Section from "doc/guides/20.Getting Started.md.hbs" Start -->
 
 <a name="section-doc-guides-20-getting-started-md"></a>
+
 Getting Started
 ---------
 
@@ -245,6 +273,7 @@ co(function * () {
 <!-- Section from "doc/guides/21.Advanced Usage.md.hbs" Start -->
 
 <a name="section-doc-guides-21-advanced-usage-md"></a>
+
 Advanced Usage
 ---------
 
@@ -289,14 +318,15 @@ module.exports = exampleTimeBombModule
 
 ```
 
-
 [event_emitter_url]: https://nodejs.org/api/events.html#events_class_eventemitter
+
 
 <!-- Section from "doc/guides/21.Advanced Usage.md.hbs" End -->
 
 <!-- Section from "doc/guides/21.More Examples.md.hbs" Start -->
 
 <a name="section-doc-guides-21-more-examples-md"></a>
+
 More Examples
 ---------
 
@@ -312,6 +342,7 @@ There are example packages you can try out.
 <!-- Section from "doc/guides/30.Related packages.md.hbs" Start -->
 
 <a name="section-doc-guides-30-related-packages-md"></a>
+
 Related Packages
 ---------
 
@@ -335,6 +366,7 @@ There are a bunch of related package and there are listed in [sugos-index page][
 <!-- Section from "doc/guides/40. Contributors.md.hbs" Start -->
 
 <a name="section-doc-guides-40-contributors-md"></a>
+
 Contributors
 ------------
 

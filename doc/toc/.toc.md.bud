@@ -1,0 +1,23 @@
+/**
+ * Bud file for Table of Contents
+ */
+'use strict'
+
+const toc = require('markdown-toc')
+const fs = require('fs')
+
+module.exports = {
+  force: true,
+  mode: '444',
+  data: {
+    src: fs.readFileSync(`${__dirname}/../../README.md`).toString()
+  },
+  tmpl (data){
+    let { src } = data
+    console.log(toc(src).content)
+    return toc(src).content.toString()
+  }
+}
+if (!module.parent) {
+  require('coz').render(__filename)
+}

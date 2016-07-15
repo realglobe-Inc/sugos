@@ -14,6 +14,7 @@ const coz = require('coz')
 apeTasking.runTasks('build', [
   () => coz.render([
     '.*.bud',
+    'doc/**/.*.bud',
     'lib/.*.bud',
     'example/**/.*.bud',
     'test/.*.bud'
