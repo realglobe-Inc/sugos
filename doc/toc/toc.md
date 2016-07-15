@@ -1,4 +1,3 @@
-- [Table of Contents](#table-of-contents)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Getting Started](#getting-started)

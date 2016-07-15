@@ -14,8 +14,17 @@ module.exports = {
   },
   tmpl (data){
     let { src } = data
-    console.log(toc(src).content)
-    return toc(src).content.toString()
+    return toc(src, {
+      filter (line) {
+        let rejectPatterns = [/Table of Contents/]
+        for (let pattern of rejectPatterns) {
+          if (pattern.test(line)) {
+            return false
+          }
+        }
+        return true
+      }
+    }).content.toString()
   }
 }
 if (!module.parent) {
