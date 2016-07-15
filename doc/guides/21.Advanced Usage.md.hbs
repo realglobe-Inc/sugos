@@ -1,0 +1,13 @@
+Advanced Usage
+---------
+
+### Using Event-Emit Interface
+
+On actors, each module methods receives an instance of [EventEmitter Class][event_emitter_url] as `ctx.pipe`.
+This allows modules to interact with remote caller via `.on(ev, handler)` and `.emit(ev, data)` functions.
+
+```javascript
+{{{read 'example/example-time-bomb-module.js'}}}
+```
+
+[event_emitter_url]: https://nodejs.org/api/events.html#events_class_eventemitter

@@ -9,7 +9,7 @@ const co = require('co')
 function exampleTimeBombModule (config) {
   return {
     // Example of event emitting function
-    countdown (ctx) {
+    countDown (ctx) {
       let { params, pipe } = ctx
       let [count] = params
       return co(function * () {

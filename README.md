@@ -117,7 +117,7 @@ Getting Started
 3 steps to be get started
 
 1. [Prepare SUGO-Cloud](#setup-sugo-cloud)
-2. [Declare modules with SUGO-Actor](#run-sugo-actor)
+2. [Declare modules on SUGO-Actor](#run-sugo-actor)
 3. [Access to modules from SUGO-Caller](#use-sugo-caller)
 
 <a id="setup-sugo-cloud"></a>
@@ -151,7 +151,7 @@ co(function * () {
 ```
 
 <a id="run-sugo-actor"></a>
-### Declare modules with SUGO-Actor
+### Declare modules on SUGO-Actor
 
 <a href="https://github.com/realglobe-Inc/sugo-actor"><img src="assets/images/sugo-actor-banner.png" alt="banner"
                                      height="40" style="height:40px"
@@ -233,7 +233,7 @@ co(function * () {
   // Event emitting
   let timeBomb = actor01.timeBomb()
   timeBomb.on('tick', (data) => console.log(`tick: ${data.count}`))
-  let booom = yield timeBomb.countdown(10)
+  let booom = yield timeBomb.countDown(10)
   console.log(booom)
 }).catch((err) => console.error(err))
 
@@ -241,6 +241,58 @@ co(function * () {
 
 
 <!-- Section from "doc/guides/20.Getting Started.md.hbs" End -->
+
+<!-- Section from "doc/guides/21.Advanced Usage.md.hbs" Start -->
+
+<a name="section-doc-guides-21-advanced-usage-md"></a>
+Advanced Usage
+---------
+
+### Using Event-Emit Interface
+
+On actors, each module methods receives an instance of [EventEmitter Class][event_emitter_url] as `ctx.pipe`.
+This allows modules to interact with remote caller via `.on(ev, handler)` and `.emit(ev, data)` functions.
+
+```javascript
+/**
+ * This is an example module
+ */
+'use strict'
+
+const co = require('co')
+
+/** @lends exampleTimeBombModule */
+function exampleTimeBombModule (config) {
+  return {
+    // Example of event emitting function
+    countDown (ctx) {
+      let { params, pipe } = ctx
+      let [count] = params
+      return co(function * () {
+        pipe.on('abort', () => {
+          count = -1
+        }) // Listen to events from the remote terminal
+        while (count > 0) {
+          count--
+          pipe.emit('tick', { count }) // Emit an event to the remote terminal
+          yield new Promise((resolve) =>
+            setTimeout(() => resolve(), 1000)
+          )
+        }
+        return count === -1 ? 'hiss...' : 'booom!!!'
+      })
+    }
+  }
+}
+
+module.exports = exampleTimeBombModule
+
+```
+
+
+[event_emitter_url]: https://nodejs.org/api/events.html#events_class_eventemitter
+
+<!-- Section from "doc/guides/21.Advanced Usage.md.hbs" End -->
 
 <!-- Section from "doc/guides/21.More Examples.md.hbs" Start -->
 

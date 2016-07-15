@@ -22,6 +22,6 @@ co(function * () {
   // Event emitting
   let timeBomb = actor01.timeBomb()
   timeBomb.on('tick', (data) => console.log(`tick: ${data.count}`))
-  let booom = yield timeBomb.countdown(10)
+  let booom = yield timeBomb.countDown(10)
   console.log(booom)
 }).catch((err) => console.error(err))
