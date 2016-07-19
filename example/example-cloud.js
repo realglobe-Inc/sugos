@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
  * This is an example of SUGO-cloud
+ * @see https://github.com/realglobe-Inc/sugo-cloud
  */
 'use strict'
 

@@ -161,6 +161,7 @@ Setup a [SUGO-Cloud][sugo_cloud_url] server for actors and callers.
 #!/usr/bin/env node
 /**
  * This is an example of SUGO-cloud
+ * @see https://github.com/realglobe-Inc/sugo-cloud
  */
 'use strict'
 
@@ -192,6 +193,7 @@ Create a [SUGO-Actor][sugo_actor_url] instance and define interfaces. Then, conn
 
 /**
  * This is an example of SUGO-Actor
+ * @see https://github.com/realglobe-Inc/sugo-actor
  */
 'use strict'
 
@@ -239,6 +241,7 @@ Then get access to modules and call functions as you like.
 
 /**
  * This is an example of SUGO-Caller
+ * @see https://github.com/realglobe-Inc/sugo-caller
  */
 'use strict'
 

@@ -2,6 +2,7 @@
 
 /**
  * This is an example of SUGO-Actor
+ * @see https://github.com/realglobe-Inc/sugo-actor
  */
 'use strict'
 
