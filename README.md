@@ -50,11 +50,12 @@ What you can do with SUGOS is:
 1. Declare a function on a client.
 2. Call the function from another client.
 
+SUGOS magically connect two clients on remote networks, and provides pseudo function interface as if they are on the same environment.
+
 <img src="assets/images/sugos-overview.jpeg" 
     alt="Overview"
 />
 
-SUGOS magically connect two clients on remote networks, and provides pseudo function interface as if they are on the same environment.
 
 It also supports event driven architecture. You can emit or listen remote events in [Node.js events](https://nodejs.org/api/events.html#events_events) style.
 This feature greatly helps you to build applications for IoT or Cloud Robotics.
@@ -202,13 +203,14 @@ co(function * () {
   let actor = sugoActor(`${CLOUD_URL}/actors`, {
     /** Name to identify this actor on the cloud */
     key: 'my-actor-01',
+    /** Modules to provide */
     modules: {
+      // Example of a simple call-return function module
       tableTennis: {
-        // Example of a simple call-return function
         ping (pong = 'default pong!') {
           return co(function * () {
             /* ... */
-            return `"${pong}" from actor!` // Return to the remote terminal
+            return `"${pong}" from actor!` // Return to the remote caller
           })
         }
       },
@@ -247,15 +249,15 @@ const co = require('co')
 const CLOUD_URL = 'http://localhost:3000'
 co(function * () {
   let caller = sugoCaller(`${CLOUD_URL}/callers`)
-  // Connect to caller with key of spot
+  // Connect to a remote actor with key
   let actor01 = yield caller.connect('my-actor-01')
 
-  // Simple call-return function
+  // Using call-return function
   let tableTennis = actor01.tableTennis()
   let pong = yield tableTennis.ping('hey!')
   console.log(pong) // -> `"hey!" from call!`
 
-  // Event emitting
+  // Using event emitting interface
   let timeBomb = actor01.timeBomb()
   timeBomb.on('tick', (data) => console.log(`tick: ${data.count}`))
   let booom = yield timeBomb.countDown(10)
@@ -296,10 +298,10 @@ function exampleTimeBombModule (config) {
       return co(function * () {
         s.on('abort', () => {
           count = -1
-        }) // Listen to events from the remote terminal
+        }) // Listen to events from the caller
         while (count > 0) {
           count--
-          s.emit('tick', { count }) // Emit an event to the remote terminal
+          s.emit('tick', { count }) // Emit an event to the caller
           yield new Promise((resolve) =>
             setTimeout(() => resolve(), 1000)
           )

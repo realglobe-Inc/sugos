@@ -13,13 +13,14 @@ co(function * () {
   let actor = sugoActor(`${CLOUD_URL}/actors`, {
     /** Name to identify this actor on the cloud */
     key: 'my-actor-01',
+    /** Modules to provide */
     modules: {
+      // Example of a simple call-return function module
       tableTennis: {
-        // Example of a simple call-return function
         ping (pong = 'default pong!') {
           return co(function * () {
             /* ... */
-            return `"${pong}" from actor!` // Return to the remote terminal
+            return `"${pong}" from actor!` // Return to the remote caller
           })
         }
       },
