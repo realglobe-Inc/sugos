@@ -12,9 +12,8 @@ function exampleTimeBombModule (config) {
     countDown (count) {
       const s = this
       return co(function * () {
-        s.on('abort', () => {
-          count = -1
-        }) // Listen to events from the caller
+        let abort = () => { count = -1 }
+        s.on('abort', abort) // Listen to events from the caller
         while (count > 0) {
           count--
           s.emit('tick', { count }) // Emit an event to the caller
@@ -22,6 +21,7 @@ function exampleTimeBombModule (config) {
             setTimeout(() => resolve(), 1000)
           )
         }
+        s.off('abort', abort) // Remove event listener
         return count === -1 ? 'hiss...' : 'booom!!!'
       })
     }

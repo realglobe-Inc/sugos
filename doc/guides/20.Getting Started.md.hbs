@@ -3,18 +3,18 @@ Getting Started
 
 3 steps to be get started
 
-1. [Prepare SUGO-Cloud](#setup-sugo-cloud)
+1. [Setup SUGO-Cloud](#setup-sugo-cloud)
 2. [Declare modules on SUGO-Actor](#run-sugo-actor)
 3. [Access to modules from SUGO-Caller](#use-sugo-caller)
 
 <a id="setup-sugo-cloud"></a>
-### Prepare SUGO-Cloud
+### Setup SUGO-Cloud
 
 <a href="{{{links.sugo-cloud}}}"><img src="assets/images/sugo-cloud-banner.png" alt="banner"
                                       height="{{vars.bannerHeight}}" style="height:{{vars.bannerHeight}}px"
 /></a>
 
-Start a [SUGO-Cloud][sugo_cloud_url] server for actors and callers.
+Setup a [SUGO-Cloud][sugo_cloud_url] server for actors and callers.
 
 ```javascript
 {{{read 'example/example-cloud.js'}}}
@@ -42,8 +42,7 @@ Create a [SUGO-Actor][sugo_actor_url] instance and define interfaces. Then, conn
 /></a>
 
 Create a [SUGO-Caller][sugo_caller_url] instance and connect to the actor with key.
-Then get access to the interface and call functions as you like.
-
+Then get access to modules and call functions as you like.
 
 ```javascript
 {{{read 'example/example-caller.js'}}}

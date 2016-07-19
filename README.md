@@ -77,7 +77,7 @@ Table of Contents
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Getting Started](#getting-started)
-  * [Prepare SUGO-Cloud](#prepare-sugo-cloud)
+  * [Setup SUGO-Cloud](#setup-sugo-cloud)
   * [Declare modules on SUGO-Actor](#declare-modules-on-sugo-actor)
   * [Access to modules from SUGO-Caller](#access-to-modules-from-sugo-caller)
 - [Advanced Usage](#advanced-usage)
@@ -144,18 +144,18 @@ Getting Started
 
 3 steps to be get started
 
-1. [Prepare SUGO-Cloud](#setup-sugo-cloud)
+1. [Setup SUGO-Cloud](#setup-sugo-cloud)
 2. [Declare modules on SUGO-Actor](#run-sugo-actor)
 3. [Access to modules from SUGO-Caller](#use-sugo-caller)
 
 <a id="setup-sugo-cloud"></a>
-### Prepare SUGO-Cloud
+### Setup SUGO-Cloud
 
 <a href="https://github.com/realglobe-Inc/sugo-cloud"><img src="assets/images/sugo-cloud-banner.png" alt="banner"
                                       height="40" style="height:40px"
 /></a>
 
-Start a [SUGO-Cloud][sugo_cloud_url] server for actors and callers.
+Setup a [SUGO-Cloud][sugo_cloud_url] server for actors and callers.
 
 ```javascript
 #!/usr/bin/env node
@@ -232,8 +232,7 @@ co(function * () {
 /></a>
 
 Create a [SUGO-Caller][sugo_caller_url] instance and connect to the actor with key.
-Then get access to the interface and call functions as you like.
-
+Then get access to modules and call functions as you like.
 
 ```javascript
 #!/usr/bin/env
@@ -249,19 +248,25 @@ const co = require('co')
 const CLOUD_URL = 'http://localhost:3000'
 co(function * () {
   let caller = sugoCaller(`${CLOUD_URL}/callers`)
-  // Connect to a remote actor with key
+  // Connect to an actor with key
   let actor01 = yield caller.connect('my-actor-01')
 
   // Using call-return function
-  let tableTennis = actor01.get('tableTennis')
-  let pong = yield tableTennis.ping('hey!')
-  console.log(pong) // -> `"hey!" from call!`
+  {
+    let tableTennis = actor01.get('tableTennis')
+    let pong = yield tableTennis.ping('hey!')
+    console.log(pong) // -> `"hey!" from call!`
+  }
 
   // Using event emitting interface
-  let timeBomb = actor01.get('timeBomb')
-  timeBomb.on('tick', (data) => console.log(`tick: ${data.count}`))
-  let booom = yield timeBomb.countDown(10)
-  console.log(booom)
+  {
+    let timeBomb = actor01.get('timeBomb')
+    let tick = (data) => console.log(`tick: ${data.count}`)
+    timeBomb.on('tick', tick) // Add listener
+    let booom = yield timeBomb.countDown(10)
+    console.log(booom)
+    timeBomb.off('tick', tick) // Remove listener
+  }
 }).catch((err) => console.error(err))
 
 ```
@@ -296,9 +301,8 @@ function exampleTimeBombModule (config) {
     countDown (count) {
       const s = this
       return co(function * () {
-        s.on('abort', () => {
-          count = -1
-        }) // Listen to events from the caller
+        let abort = () => { count = -1 }
+        s.on('abort', abort) // Listen to events from the caller
         while (count > 0) {
           count--
           s.emit('tick', { count }) // Emit an event to the caller
@@ -306,6 +310,7 @@ function exampleTimeBombModule (config) {
             setTimeout(() => resolve(), 1000)
           )
         }
+        s.off('abort', abort) // Remove event listener
         return count === -1 ? 'hiss...' : 'booom!!!'
       })
     }

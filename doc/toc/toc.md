@@ -1,7 +1,7 @@
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Getting Started](#getting-started)
-  * [Prepare SUGO-Cloud](#prepare-sugo-cloud)
+  * [Setup SUGO-Cloud](#setup-sugo-cloud)
   * [Declare modules on SUGO-Actor](#declare-modules-on-sugo-actor)
   * [Access to modules from SUGO-Caller](#access-to-modules-from-sugo-caller)
 - [Advanced Usage](#advanced-usage)
