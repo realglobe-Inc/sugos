@@ -253,12 +253,12 @@ co(function * () {
   let actor01 = yield caller.connect('my-actor-01')
 
   // Using call-return function
-  let tableTennis = actor01.tableTennis()
+  let tableTennis = actor01.get('tableTennis')
   let pong = yield tableTennis.ping('hey!')
   console.log(pong) // -> `"hey!" from call!`
 
   // Using event emitting interface
-  let timeBomb = actor01.timeBomb()
+  let timeBomb = actor01.get('timeBomb')
   timeBomb.on('tick', (data) => console.log(`tick: ${data.count}`))
   let booom = yield timeBomb.countDown(10)
   console.log(booom)

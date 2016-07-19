@@ -24,8 +24,8 @@
   "dependencies": {
     "co": "^4.6.0",
     "stringcase": "^3.0.1",
-    "sugo-actor": "^3.0.0",
-    "sugo-caller": "^2.0.2",
+    "sugo-actor": "^3.0.2",
+    "sugo-caller": "^2.0.4",
     "sugo-cloud": "^2.0.1"
   },
   "devDependencies": {
