@@ -1,6 +1,6 @@
 {
   "name": "sugos",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A high-level RPC framework to make remote controlling super easy.",
   "main": "lib",
   "scripts": {
@@ -39,7 +39,7 @@
     "ape-tmpl": "^5.0.11",
     "ape-updating": "^4.0.2",
     "asleep": "^1.0.3",
-    "coz": "^6.0.11",
+    "coz": "^6.0.14",
     "filecopy": "^2.0.0",
     "injectmock": "^2.0.0",
     "markdown-toc": "^0.12.14",

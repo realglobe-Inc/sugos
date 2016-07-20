@@ -145,8 +145,8 @@ Getting Started
 3 steps to be get started
 
 1. [Setup SUGO-Cloud](#setup-sugo-cloud)
-2. [Declare modules on SUGO-Actor](#run-sugo-actor)
-3. [Access to modules from SUGO-Caller](#use-sugo-caller)
+2. [Declare modules on SUGO-Actor](#declare-on-sugo-actor)
+3. [Access to modules from SUGO-Caller](#call-from-sugo-caller)
 
 <a id="setup-sugo-cloud"></a>
 ### Setup SUGO-Cloud
@@ -179,7 +179,7 @@ co(function * () {
 
 ```
 
-<a id="run-sugo-actor"></a>
+<a id="declare-on-sugo-actor"></a>
 ### Declare modules on SUGO-Actor
 
 <a href="https://github.com/realglobe-Inc/sugo-actor"><img src="assets/images/sugo-actor-banner.png" alt="banner"
@@ -226,7 +226,7 @@ co(function * () {
 ```
 
 
-<a id="use-sugo-caller"></a>
+<a id="call-from-sugo-caller"></a>
 ### Access to modules from SUGO-Caller
 
 <a href="https://github.com/realglobe-Inc/sugo-caller"><img src="assets/images/sugo-caller-banner.png" alt="banner"
