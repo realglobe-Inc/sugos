@@ -186,7 +186,7 @@ co(function * () {
                                      height="40" style="height:40px"
 /></a>
 
-Create a [SUGO-Actor][sugo_actor_url] instance and define interfaces. Then, connect to the cloud server.
+Create a [SUGO-Actor][sugo_actor_url] instance and declare modules. Then, connect to the cloud server.
 
 ```javascript
 #!/usr/bin/env
