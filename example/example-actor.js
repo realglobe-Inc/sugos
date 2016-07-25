@@ -7,6 +7,7 @@
 'use strict'
 
 const sugoActor = require('sugo-actor')
+const { Module } = sugoActor
 const co = require('co')
 
 const CLOUD_URL = 'http://localhost:3000'
@@ -17,14 +18,14 @@ co(function * () {
     /** Modules to provide */
     modules: {
       // Example of a simple call-return function module
-      tableTennis: {
+      tableTennis: new Module({
         ping (pong = 'default pong!') {
           return co(function * () {
             /* ... */
             return `"${pong}" from actor!` // Return to the remote caller
           })
         }
-      },
+      })
       // Load plugin module
       timeBomb: require('./example-time-bomb-module')({})
     }
