@@ -1,6 +1,6 @@
 {
   "name": "sugos",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "A high-level RPC framework to make remote controlling super easy.",
   "main": "lib",
   "scripts": {
@@ -24,7 +24,7 @@
   "dependencies": {
     "co": "^4.6.0",
     "stringcase": "^3.0.1",
-    "sugo-actor": "^3.0.2",
+    "sugo-actor": "^4.0.0",
     "sugo-caller": "^2.0.4",
     "sugo-cloud": "^2.0.3"
   },
@@ -42,7 +42,7 @@
     "coz": "^6.0.14",
     "filecopy": "^2.0.0",
     "injectmock": "^2.0.0",
-    "markdown-toc": "^0.12.14",
+    "markdown-toc": "^0.12.15",
     "sugos-assets": "^2.0.1",
     "sugos-index": "^2.0.0"
   },

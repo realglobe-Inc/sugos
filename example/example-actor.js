@@ -25,7 +25,7 @@ co(function * () {
             return `"${pong}" from actor!` // Return to the remote caller
           })
         }
-      })
+      }),
       // Load plugin module
       timeBomb: require('./example-time-bomb-module')({})
     }

@@ -198,6 +198,7 @@ Create a [SUGO-Actor][sugo_actor_url] instance and declare modules. Then, connec
 'use strict'
 
 const sugoActor = require('sugo-actor')
+const { Module } = sugoActor
 const co = require('co')
 
 const CLOUD_URL = 'http://localhost:3000'
@@ -208,14 +209,14 @@ co(function * () {
     /** Modules to provide */
     modules: {
       // Example of a simple call-return function module
-      tableTennis: {
+      tableTennis: new Module({
         ping (pong = 'default pong!') {
           return co(function * () {
             /* ... */
             return `"${pong}" from actor!` // Return to the remote caller
           })
         }
-      },
+      }),
       // Load plugin module
       timeBomb: require('./example-time-bomb-module')({})
     }
@@ -286,8 +287,7 @@ Advanced Usage
 
 ### Using Event-Emit Interface
 
-On actors, each module methods is an instance of [EventEmitter Class][event_emitter_url].
-This allows modules to interact with remote caller via `.on(ev, handler)` and `.emit(ev, data)` functions.
+On actors, each module provides [EventEmitter][event_emitter_url] interface like `.on(ev, handler)` and `.emit(ev, data)` functions.
 
 ```javascript
 /**
@@ -296,31 +296,33 @@ This allows modules to interact with remote caller via `.on(ev, handler)` and `.
 'use strict'
 
 const co = require('co')
+const { Module } = require('sugo-actor')
 
-/** @lends exampleTimeBombModule */
-function exampleTimeBombModule (config) {
-  return {
-    // Example of event emitting function
-    countDown (count) {
-      const s = this
-      return co(function * () {
-        let abort = () => { count = -1 }
-        s.on('abort', abort) // Listen to events from the caller
-        while (count > 0) {
-          count--
-          s.emit('tick', { count }) // Emit an event to the caller
-          yield new Promise((resolve) =>
-            setTimeout(() => resolve(), 1000)
-          )
-        }
-        s.off('abort', abort) // Remove event listener
-        return count === -1 ? 'hiss...' : 'booom!!!'
-      })
-    }
+class TimeBomb extends Module {
+  // Example of event emitting function
+  countDown (count) {
+    const s = this
+    return co(function * () {
+      let abort = () => { count = -1 }
+      s.on('abort', abort) // Listen to events from the caller
+      while (count > 0) {
+        count--
+        s.emit('tick', { count }) // Emit an event to the caller
+        yield new Promise((resolve) =>
+          setTimeout(() => resolve(), 1000)
+        )
+      }
+      s.off('abort', abort) // Remove event listener
+      return count === -1 ? 'hiss...' : 'booom!!!'
+    })
   }
 }
 
-module.exports = exampleTimeBombModule
+function newTimeBomb (args) {
+  return new TimeBomb(...args)
+}
+
+module.exports = newTimeBomb // Pass factory method
 
 ```
 
