@@ -258,7 +258,6 @@ co(function * () {
   // Using call-return function
   {
     let tableTennis = actor01.get('tableTennis')
-    console.log(tableTennis)
     let pong = yield tableTennis.ping('hey!')
     console.log(pong) // -> `"hey!" from call!`
   }
