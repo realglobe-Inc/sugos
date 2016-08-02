@@ -1,6 +1,6 @@
 {
   "name": "sugos",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A high-level RPC framework to make remote controlling super easy.",
   "main": "lib",
   "scripts": {
@@ -24,27 +24,28 @@
   "dependencies": {
     "co": "^4.6.0",
     "stringcase": "^3.0.1",
-    "sugo-actor": "^4.0.3",
-    "sugo-caller": "^2.1.7",
-    "sugo-cloud": "^2.0.8"
+    "sugo-actor": "^4.0.0",
+    "sugo-caller": "^2.0.4",
+    "sugo-cloud": "^2.0.3"
   },
   "devDependencies": {
     "ape-covering": "^3.0.3",
-    "ape-deploying": "^5.0.5",
+    "ape-deploying": "^5.0.2",
     "ape-formatting": "^1.0.0",
-    "ape-releasing": "^4.0.4",
-    "ape-reporting": "^3.0.2",
-    "ape-tasking": "^4.0.8",
+    "ape-releasing": "^4.0.2",
+    "ape-reporting": "^3.0.1",
+    "ape-tasking": "^4.0.7",
     "ape-testing": "^4.0.0",
-    "ape-tmpl": "^5.0.15",
-    "ape-updating": "^4.0.5",
+    "ape-tmpl": "^5.0.11",
+    "ape-updating": "^4.0.2",
     "asleep": "^1.0.3",
-    "coz": "^6.0.16",
-    "filecopy": "^2.0.2",
+    "coz": "^6.0.14",
+    "filecopy": "^2.0.0",
     "injectmock": "^2.0.0",
-    "markdown-toc": "^0.12.16",
+    "markdown-toc": "^0.12.15",
+    "sg-travis": "^1.1.25",
     "sugos-assets": "^2.0.1",
-    "sugos-index": "^2.0.2"
+    "sugos-index": "^2.0.0"
   },
   "engines": {
     "node": ">=6.x",
