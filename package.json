@@ -43,7 +43,7 @@
     "filecopy": "^2.0.0",
     "injectmock": "^2.0.0",
     "markdown-toc": "^0.12.15",
-    "sg-travis": "^1.1.25",
+    "sg-travis": "^1.1.26",
     "sugos-assets": "^2.0.1",
     "sugos-index": "^2.0.0"
   },
