@@ -26,7 +26,7 @@ class TimeBomb extends Module {
   }
 }
 
-function newTimeBomb (args) {
+function newTimeBomb (...args) {
   return new TimeBomb(...args)
 }
 
