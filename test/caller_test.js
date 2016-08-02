@@ -1,14 +1,14 @@
 /**
- * Test case for terminal.
+ * Test case for caller.
  * Runs with mocha.
  */
 'use strict'
 
-const terminal = require('../lib/terminal.js')
+const caller = require('../lib/caller.js')
 const assert = require('assert')
 const co = require('co')
 
-describe('terminal', () => {
+describe('caller', () => {
   before(() => co(function * () {
 
   }))
@@ -17,8 +17,8 @@ describe('terminal', () => {
 
   }))
 
-  it('Terminal', () => co(function * () {
-    assert.ok(terminal)
+  it('Caller', () => co(function * () {
+    assert.ok(caller)
   }))
 })
 

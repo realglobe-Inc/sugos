@@ -1,14 +1,14 @@
 /**
- * Test case for spot.
+ * Test case for actor.
  * Runs with mocha.
  */
 'use strict'
 
-const spot = require('../lib/spot.js')
+const actor = require('../lib/actor.js')
 const assert = require('assert')
 const co = require('co')
 
-describe('spot', () => {
+describe('actor', () => {
   before(() => co(function * () {
 
   }))

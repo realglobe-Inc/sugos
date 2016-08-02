@@ -258,6 +258,7 @@ co(function * () {
   // Using call-return function
   {
     let tableTennis = actor01.get('tableTennis')
+    console.log(tableTennis)
     let pong = yield tableTennis.ping('hey!')
     console.log(pong) // -> `"hey!" from call!`
   }
@@ -318,7 +319,7 @@ class TimeBomb extends Module {
   }
 }
 
-function newTimeBomb (args) {
+function newTimeBomb (...args) {
   return new TimeBomb(...args)
 }
 
