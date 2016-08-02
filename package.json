@@ -44,7 +44,7 @@
     "injectmock": "^2.0.0",
     "markdown-toc": "^0.12.16",
     "sugos-assets": "^2.0.1",
-    "sugos-index": "^2.0.0"
+    "sugos-index": "^2.0.2"
   },
   "engines": {
     "node": ">=6.x",
