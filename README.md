@@ -52,7 +52,7 @@ What you can do with SUGOS is:
 
 SUGOS magically connect two clients on remote networks, and provides pseudo function interface as if they are on the same environment.
 
-<img src="assets/images/sugos-overview.jpeg" 
+<img src="assets/images/sugos-overview.png" 
     alt="Overview"
 />
 
@@ -77,7 +77,7 @@ Table of Contents
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Getting Started](#getting-started)
-  * [Setup SUGO-Cloud](#setup-sugo-cloud)
+  * [Setup SUGO-Hub](#setup-sugo-hub)
   * [Declare modules on SUGO-Actor](#declare-modules-on-sugo-actor)
   * [Access to modules from SUGO-Caller](#access-to-modules-from-sugo-caller)
 - [Advanced Usage](#advanced-usage)
@@ -144,33 +144,33 @@ Getting Started
 
 3 steps to be get started
 
-1. [Setup SUGO-Cloud](#setup-sugo-cloud)
+1. [Setup SUGO-Hub](#setup-sugo-hub)
 2. [Declare modules on SUGO-Actor](#declare-on-sugo-actor)
 3. [Access to modules from SUGO-Caller](#call-from-sugo-caller)
 
-<a id="setup-sugo-cloud"></a>
-### Setup SUGO-Cloud
+<a id="setup-sugo-hub"></a>
+### Setup SUGO-Hub
 
-<a href="https://github.com/realglobe-Inc/sugo-cloud"><img src="assets/images/sugo-cloud-banner.png" alt="banner"
+<a href="https://github.com/realglobe-Inc/sugo-hub"><img src="assets/images/sugo-hub-banner.png" alt="banner"
                                       height="40" style="height:40px"
 /></a>
 
-Setup a [SUGO-Cloud][sugo_cloud_url] server for actors and callers.
+Setup a [SUGO-Hub][sugo_hub_url] server for actors and callers.
 
 ```javascript
 #!/usr/bin/env node
 /**
  * This is an example of SUGO-cloud
- * @see https://github.com/realglobe-Inc/sugo-cloud
+ * @see https://github.com/realglobe-Inc/sugo-hub
  */
 'use strict'
 
-const sugoCloud = require('sugo-cloud')
+const sugoHub = require('sugo-hub')
 const co = require('co')
 
 co(function * () {
-  // Start sugo-cloud server
-  let cloud = yield sugoCloud({
+  // Start sugo-hub server
+  let cloud = yield sugoHub({
     // Options
     port: 3000
   })
@@ -363,8 +363,8 @@ There are a bunch of related package and there are listed in [sugos-index page][
 + [Demo packages](https://github.com/realglobe-Inc/sugos-index#package-group-Demo) - Demo for SUGOS scaffolding
 + [Example packages](https://github.com/realglobe-Inc/sugos-index#package-group-Example) - Example project using SUGOS framework
 + [Module packages](https://github.com/realglobe-Inc/sugos-index#package-group-Module) - Module plugins for SUGOS-Actor
-+ [Middleware packages](https://github.com/realglobe-Inc/sugos-index#package-group-Middleware) - Middleware plugins for SUGO-Cloud
-+ [Endpoint packages](https://github.com/realglobe-Inc/sugos-index#package-group-Endpoint) - Endpoint plugins for SUGO-Cloud
++ [Middleware packages](https://github.com/realglobe-Inc/sugos-index#package-group-Middleware) - Middleware plugins for SUGO-Hub
++ [Endpoint packages](https://github.com/realglobe-Inc/sugos-index#package-group-Endpoint) - Endpoint plugins for SUGO-Hub
 + [Agent packages](https://github.com/realglobe-Inc/sugos-index#package-group-Agent) - Agent of endpoints
 + [Helper packages](https://github.com/realglobe-Inc/sugos-index#package-group-Helper) - Helper packages.
 
@@ -408,13 +408,13 @@ This software is released under the [Apache-2.0 License](https://github.com/real
 Links
 ------
 
-+ [sugo-cloud][sugo_cloud_url]
++ [sugo-hub][sugo_hub_url]
 + [sugo-actor][sugo_actor_url]
 + [sugo-caller][sugo_caller_url]
 + [sugos-index][sugos_index_url]
 + [sugos.tech][sugos_tech_url]
 
-[sugo_cloud_url]: https://github.com/realglobe-Inc/sugo-cloud
+[sugo_hub_url]: https://github.com/realglobe-Inc/sugo-hub
 [sugo_actor_url]: https://github.com/realglobe-Inc/sugo-actor
 [sugo_caller_url]: https://github.com/realglobe-Inc/sugo-caller
 [sugos_index_url]: https://github.com/realglobe-Inc/sugos-index#readme

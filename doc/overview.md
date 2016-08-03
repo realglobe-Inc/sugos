@@ -5,7 +5,7 @@ What you can do with SUGOS is:
 
 SUGOS magically connect two clients on remote networks, and provides pseudo function interface as if they are on the same environment.
 
-<img src="assets/images/sugos-overview.jpeg" 
+<img src="assets/images/sugos-overview.png" 
     alt="Overview"
 />
 

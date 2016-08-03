@@ -24,8 +24,8 @@
   "dependencies": {
     "co": "^4.6.0",
     "stringcase": "^3.0.1",
-    "sugo-actor": "^4.1.0",
-    "sugo-caller": "^2.0.4",
+    "sugo-actor": "^4.1.3",
+    "sugo-caller": "^2.1.8",
     "sugo-cloud": "^2.0.3"
   },
   "devDependencies": {
@@ -43,7 +43,7 @@
     "injectmock": "^2.0.0",
     "markdown-toc": "^0.12.15",
     "sg-travis": "^1.1.26",
-    "sugos-assets": "^2.0.1",
+    "sugos-assets": "^2.0.3",
     "sugos-index": "^2.0.0"
   },
   "engines": {
