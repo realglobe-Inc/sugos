@@ -26,7 +26,7 @@
     "stringcase": "^3.0.1",
     "sugo-actor": "^4.1.3",
     "sugo-caller": "^2.1.8",
-    "sugo-cloud": "^2.0.3"
+    "sugo-hub": "^3.0.1"
   },
   "devDependencies": {
     "amocha": "^1.0.11",

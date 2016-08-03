@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * This is an example of SUGO-cloud
+ * This is an example of SUGO-hub
  * @see https://github.com/realglobe-Inc/sugo-hub
  */
 'use strict'
@@ -10,9 +10,9 @@ const co = require('co')
 
 co(function * () {
   // Start sugo-hub server
-  let cloud = yield sugoHub({
+  let hub = yield sugoHub({
     // Options
     port: 3000
   })
-  console.log(`SUGO Cloud started at port: ${cloud.port}`)
+  console.log(`SUGO Hub started at port: ${hub.port}`)
 }).catch((err) => { /* ... */ })

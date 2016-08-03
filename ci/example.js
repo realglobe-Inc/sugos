@@ -7,14 +7,14 @@
 process.chdir(`${__dirname}/..`)
 
 const { fork } = require('child_process')
-const exampleCloud = require.resolve('../example/example-cloud')
+const exampleHub = require.resolve('../example/example-hub')
 const exampleActor = require.resolve('../example/example-actor')
 const exampleCaller = require.resolve('../example/example-caller')
 const asleep = require('asleep')
 const co = require('co')
 
 co(function * () {
-  let cloud = fork(exampleCloud, { stdio: 'inherit' })
+  let cloud = fork(exampleHub, { stdio: 'inherit' })
   yield asleep(800)
   let spot = fork(exampleActor, { stdio: 'inherit' })
   yield asleep(800)

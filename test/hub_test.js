@@ -1,14 +1,16 @@
 /**
- * Test case for cloud.
+ * Test case for hub.
  * Runs with mocha.
  */
 'use strict'
 
-const cloud = require('../lib/cloud.js')
+const hub = require('../lib/hub.js')
 const assert = require('assert')
 const co = require('co')
 
-describe('cloud', () => {
+describe('hub', function () {
+  this.timeout(3000)
+
   before(() => co(function * () {
 
   }))
@@ -17,8 +19,8 @@ describe('cloud', () => {
 
   }))
 
-  it('Cloud', () => co(function * () {
-
+  it('Hub', () => co(function * () {
+    assert.ok(hub)
   }))
 })
 
