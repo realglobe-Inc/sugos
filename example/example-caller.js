@@ -9,9 +9,11 @@
 const sugoCaller = require('sugo-caller')
 const co = require('co')
 
-const CLOUD_URL = 'http://localhost:3000'
 co(function * () {
-  let caller = sugoCaller(`${CLOUD_URL}/callers`)
+  let caller = sugoCaller({
+    hostname: 'localhost',
+    port: 3000
+  })
   // Connect to an actor with key
   let actor01 = yield caller.connect('my-actor-01')
 

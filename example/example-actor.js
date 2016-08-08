@@ -10,9 +10,10 @@ const sugoActor = require('sugo-actor')
 const { Module } = sugoActor
 const co = require('co')
 
-const CLOUD_URL = 'http://localhost:3000'
 co(function * () {
-  let actor = sugoActor(`${CLOUD_URL}/actors`, {
+  let actor = sugoActor({
+    hostname: 'localhost',
+    port: 3000,
     /** Name to identify this actor on the cloud */
     key: 'my-actor-01',
     /** Modules to provide */
