@@ -37,5 +37,6 @@ tmp
 # SUGOS
 .*
 ci
-doc
+doc/*
+!doc/api
 test
