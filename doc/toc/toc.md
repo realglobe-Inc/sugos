@@ -7,6 +7,7 @@
 - [Advanced Usage](#advanced-usage)
   * [Using Event-Emit Interface](#using-event-emit-interface)
 - [More Examples](#more-examples)
+- [API Docs](#api-docs)
 - [Related Packages](#related-packages)
 - [Contributors](#contributors)
 - [License](#license)

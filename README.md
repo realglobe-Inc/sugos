@@ -83,6 +83,7 @@ Table of Contents
 - [Advanced Usage](#advanced-usage)
   * [Using Event-Emit Interface](#using-event-emit-interface)
 - [More Examples](#more-examples)
+- [API Docs](#api-docs)
 - [Related Packages](#related-packages)
 - [Contributors](#contributors)
 - [License](#license)
@@ -333,9 +334,9 @@ module.exports = newTimeBomb // Pass factory method
 
 <!-- Section from "doc/guides/21.Advanced Usage.md.hbs" End -->
 
-<!-- Section from "doc/guides/21.More Examples.md.hbs" Start -->
+<!-- Section from "doc/guides/22.More Examples.md.hbs" Start -->
 
-<a name="section-doc-guides-21-more-examples-md"></a>
+<a name="section-doc-guides-22-more-examples-md"></a>
 
 More Examples
 ---------
@@ -350,7 +351,21 @@ There are example packages you can try out.
 | [sugo-example-roomba](https://github.com/realglobe-Inc/sugo-example-roomba) | SUGOS example project to contorl roomba | <a href="http://sugo-example-roomba.herokuapp.com"><img style="height:48px" height="48" src="http://realglobe-inc.github.io/sugo-example-roomba/images/favicon.png"/></a> | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sugo-example-roomba/tree/heroku) |
 
 
-<!-- Section from "doc/guides/21.More Examples.md.hbs" End -->
+<!-- Section from "doc/guides/22.More Examples.md.hbs" End -->
+
+<!-- Section from "doc/guides/23.API.md.hbs" Start -->
+
+<a name="section-doc-guides-23-a-p-i-md"></a>
+
+API Docs
+---------
+
++ [SUGO-Hub](./doc/api/hub.md)
++ [SUGO-Actor](./doc/api/actor.md)
++ [SUGO-Caller](./doc/api/caller.md)
+
+
+<!-- Section from "doc/guides/23.API.md.hbs" End -->
 
 <!-- Section from "doc/guides/30.Related packages.md.hbs" Start -->
 
