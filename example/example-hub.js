@@ -10,9 +10,6 @@ const co = require('co')
 
 co(function * () {
   // Start sugo-hub server
-  let hub = yield sugoHub({
-    // Options
-    port: 3000
-  })
+  let hub = yield sugoHub({}).listen(3000)
   console.log(`SUGO Hub started at port: ${hub.port}`)
-}).catch((err) => { /* ... */ })
+}).catch((err) => console.error(err))

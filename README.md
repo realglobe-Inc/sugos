@@ -170,12 +170,9 @@ const co = require('co')
 
 co(function * () {
   // Start sugo-hub server
-  let hub = yield sugoHub({
-    // Options
-    port: 3000
-  })
+  let hub = yield sugoHub({}).listen(3000)
   console.log(`SUGO Hub started at port: ${hub.port}`)
-}).catch((err) => { /* ... */ })
+}).catch((err) => console.error(err))
 
 ```
 
@@ -203,6 +200,7 @@ const co = require('co')
 
 co(function * () {
   let actor = sugoActor({
+    /** Host of hub to connect */
     hostname: 'localhost',
     port: 3000,
     /** Name to identify this actor on the cloud */
@@ -252,6 +250,7 @@ const co = require('co')
 
 co(function * () {
   let caller = sugoCaller({
+    // Host of hub to connect
     hostname: 'localhost',
     port: 3000
   })
@@ -366,8 +365,8 @@ There are a bunch of related package and there are listed in [sugos-index page][
 + [Demo packages](https://github.com/realglobe-Inc/sugos-index#package-group-Demo) - Demo for SUGOS scaffolding
 + [Example packages](https://github.com/realglobe-Inc/sugos-index#package-group-Example) - Example project using SUGOS framework
 + [Module packages](https://github.com/realglobe-Inc/sugos-index#package-group-Module) - Module plugins for SUGOS-Actor
-+ [Middleware packages](https://github.com/realglobe-Inc/sugos-index#package-group-Middleware) - Middleware plugins for SUGO-Hub
-+ [Endpoint packages](https://github.com/realglobe-Inc/sugos-index#package-group-Endpoint) - Endpoint plugins for SUGO-Hub
++ [Middleware packages](https://github.com/realglobe-Inc/sugos-index#package-group-Middleware) - Middleware plugins for SUGO-Cloud
++ [Endpoint packages](https://github.com/realglobe-Inc/sugos-index#package-group-Endpoint) - Endpoint plugins for SUGO-Cloud
 + [Agent packages](https://github.com/realglobe-Inc/sugos-index#package-group-Agent) - Agent of endpoints
 + [Helper packages](https://github.com/realglobe-Inc/sugos-index#package-group-Helper) - Helper packages.
 

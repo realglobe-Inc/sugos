@@ -11,6 +11,7 @@ const co = require('co')
 
 co(function * () {
   let caller = sugoCaller({
+    // Host of hub to connect
     hostname: 'localhost',
     port: 3000
   })

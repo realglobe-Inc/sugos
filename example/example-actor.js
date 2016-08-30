@@ -12,6 +12,7 @@ const co = require('co')
 
 co(function * () {
   let actor = sugoActor({
+    /** Host of hub to connect */
     hostname: 'localhost',
     port: 3000,
     /** Name to identify this actor on the cloud */

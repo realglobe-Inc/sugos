@@ -24,12 +24,12 @@
   "dependencies": {
     "co": "^4.6.0",
     "stringcase": "^3.0.1",
-    "sugo-actor": "^4.1.6",
-    "sugo-caller": "^2.1.11",
-    "sugo-hub": "^3.0.10"
+    "sugo-actor": "^4.4.0",
+    "sugo-caller": "^3.0.2",
+    "sugo-hub": "^4.0.1"
   },
   "devDependencies": {
-    "amocha": "^1.0.13",
+    "amocha": "^1.0.14",
     "ape-deploying": "^5.0.2",
     "ape-formatting": "^1.0.0",
     "ape-releasing": "^4.0.2",
@@ -42,6 +42,7 @@
     "filecopy": "^2.0.0",
     "injectmock": "^2.0.0",
     "markdown-toc": "^0.12.15",
+    "sg-templates": "^1.2.1",
     "sg-travis": "^1.1.29",
     "sugos-assets": "^2.0.3",
     "sugos-index": "^2.0.0"
