@@ -1,4 +1,4 @@
-# sugo-actor@4.4.0
+# sugo-actor@4.4.2
 
 Actor component of SUGOS.
 
@@ -15,7 +15,8 @@ Actor component of SUGOS.
 
 ## Functions
 
-<a name="sugo-actor-function-sugo-actor" />
+<a class='md-heading-link' name="sugo-actor-function-sugo-actor" ></a>
+
 ### sugoActor(config) -> `SugoActor`
 
 Create an actor instance. Just an alias of `new SugoActor(config)`
@@ -36,13 +37,15 @@ co(function * () {
 ```
 
 
-<a name="sugo-actor-classes"/>
+<a class='md-heading-link' name="sugo-actor-classes"></a>
+
 ## SugoActor Class
 
 
 
 
-<a name="sugo-actor-classes-sugo-actor-constructor" />
+<a class='md-heading-link' name="sugo-actor-classes-sugo-actor-constructor" ></a>
+
 ### new SugoActor(url, config)
 
 Constructor of SugoActor class
@@ -56,18 +59,21 @@ Constructor of SugoActor class
 | config.modules | object.&lt;String, SugoActorModule&gt; | Modules to load. |
 
 
-<a name="sugo-actor-classes-sugo-actor-connect" />
+<a class='md-heading-link' name="sugo-actor-classes-sugo-actor-connect" ></a>
+
 ### actor.connect() -> `Promise`
 
 Connect to hub.
 By call this, actor share specification of the modules to hub so that callers can access them.
 
-<a name="sugo-actor-classes-sugo-actor-disconnect" />
+<a class='md-heading-link' name="sugo-actor-classes-sugo-actor-disconnect" ></a>
+
 ### actor.disconnect() -> `Promise`
 
 Disconnect from the hub
 
-<a name="sugo-actor-classes-sugo-actor-perform" />
+<a class='md-heading-link' name="sugo-actor-classes-sugo-actor-perform" ></a>
+
 ### actor.perform(data) -> `Promise`
 
 Handle perform event
@@ -77,7 +83,8 @@ Handle perform event
 | data | object |  |
 
 
-<a name="sugo-actor-classes-sugo-actor-load" />
+<a class='md-heading-link' name="sugo-actor-classes-sugo-actor-load" ></a>
+
 ### actor.load(moduleName, module) -> `Promise`
 
 Load a module
@@ -88,7 +95,8 @@ Load a module
 | module | Object | Module to load |
 
 
-<a name="sugo-actor-classes-sugo-actor-loadSub" />
+<a class='md-heading-link' name="sugo-actor-classes-sugo-actor-loadSub" ></a>
+
 ### actor.loadSub(moduleName, subModules) -> `Promise`
 
 Load submodules
@@ -99,7 +107,8 @@ Load submodules
 | subModules | Object |  |
 
 
-<a name="sugo-actor-classes-sugo-actor-unload" />
+<a class='md-heading-link' name="sugo-actor-classes-sugo-actor-unload" ></a>
+
 ### actor.unload(name) -> `Promise`
 
 Unload module with name

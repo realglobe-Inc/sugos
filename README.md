@@ -161,7 +161,7 @@ Setup a [SUGO-Hub][sugo_hub_url] server for actors and callers.
 ```javascript
 #!/usr/bin/env node
 /**
- * This is an example of SUGO-hub
+ * This is an example of SUGO-Hub
  * @see https://github.com/realglobe-Inc/sugo-hub
  */
 'use strict'

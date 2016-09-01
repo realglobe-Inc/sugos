@@ -9,7 +9,8 @@ Hub server of SUGOS
 
 ## Functions
 
-<a name="sugo-hub-function-sugo-hub" />
+<a class='md-heading-link' name="sugo-hub-function-sugo-hub" ></a>
+
 ### sugoHub() -> `Promise.<SugoHub>`
 
 Create a hub instance. Just an alias of `new SugoCaller(config)`
@@ -23,13 +24,15 @@ co(function * () {
 ```
 
 
-<a name="sugo-hub-classes"/>
+<a class='md-heading-link' name="sugo-hub-classes"></a>
+
 ## SugoHub Class
 
 Hub server of SUGOS
 
 
-<a name="sugo-hub-classes-sugo-hub-constructor" />
+<a class='md-heading-link' name="sugo-hub-classes-sugo-hub-constructor" ></a>
+
 ### new SugoHub(options)
 
 Constructor of SugoHub class

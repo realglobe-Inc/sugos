@@ -1,4 +1,4 @@
-# sugo-caller@3.0.2
+# sugo-caller@3.0.3
 
 Caller component of SUGOS.
 
@@ -18,7 +18,8 @@ Caller component of SUGOS.
 
 ## Functions
 
-<a name="sugo-caller-function-sugo-caller" />
+<a class='md-heading-link' name="sugo-caller-function-sugo-caller" ></a>
+
 ### sugoCaller(config) -> `SugoCaller`
 
 Create a caller instance. Just an alias of `new SugoCaller(config)`
@@ -37,7 +38,8 @@ co(function * () {
 ```
 
 
-<a name="sugo-caller-classes"/>
+<a class='md-heading-link' name="sugo-caller-classes"></a>
+
 ## SugoCaller Class
 
 Hub client for caller side.
@@ -45,7 +47,8 @@ When you connect to remote actor with a caller, it receives specification of the
 This way you can magically call functions declared on remote as if they were here.
 
 
-<a name="sugo-caller-classes-sugo-caller-constructor" />
+<a class='md-heading-link' name="sugo-caller-classes-sugo-caller-constructor" ></a>
+
 ### new SugoCaller(config)
 
 Constructor of SugoCaller class
@@ -59,7 +62,8 @@ Constructor of SugoCaller class
 | config.auth | Object | Auth data for hub |
 
 
-<a name="sugo-caller-classes-sugo-caller-connect" />
+<a class='md-heading-link' name="sugo-caller-classes-sugo-caller-connect" ></a>
+
 ### caller.connect(key) -> `Promise.<ActorAccessBundle>`
 
 Connect to actor
@@ -69,7 +73,8 @@ Connect to actor
 | key | string | Key of actor |
 
 
-<a name="sugo-caller-classes-sugo-caller-disconnect" />
+<a class='md-heading-link' name="sugo-caller-classes-sugo-caller-disconnect" ></a>
+
 ### caller.disconnect(key) -> `Promise`
 
 Disconnect from cloud server
@@ -79,21 +84,24 @@ Disconnect from cloud server
 | key | string | Key of actor to connect |
 
 
-<a name="sugo-caller-classes"/>
+<a class='md-heading-link' name="sugo-caller-classes"></a>
+
 ## ActorAccessBundle Class
 
 Bundle for actor access.
 This class provides access for loaded modules on actor.
 
 
-<a name="sugo-caller-classes-actor-access-bundle-constructor" />
+<a class='md-heading-link' name="sugo-caller-classes-actor-access-bundle-constructor" ></a>
+
 ### new ActorAccessBundle()
 
 Constructor of ActorAccessBundle class
 
 
 
-<a name="sugo-caller-classes-actor-access-bundle-get" />
+<a class='md-heading-link' name="sugo-caller-classes-actor-access-bundle-get" ></a>
+
 ### bundle.get(moduleName, options) -> `ActorAccessModule`
 
 Get a module
@@ -104,7 +112,8 @@ Get a module
 | options | Object | Optional settings |
 
 
-<a name="sugo-caller-classes-actor-access-bundle-has" />
+<a class='md-heading-link' name="sugo-caller-classes-actor-access-bundle-has" ></a>
+
 ### bundle.has(moduleName) -> `Boolean`
 
 Check if module exists
@@ -114,7 +123,8 @@ Check if module exists
 | moduleName | string | Name of module |
 
 
-<a name="sugo-caller-classes-actor-access-bundle-set" />
+<a class='md-heading-link' name="sugo-caller-classes-actor-access-bundle-set" ></a>
+
 ### bundle.set(moduleName, module, options)
 
 Set module
@@ -126,7 +136,8 @@ Set module
 | options | Object | Optional settings |
 
 
-<a name="sugo-caller-classes-actor-access-bundle-del" />
+<a class='md-heading-link' name="sugo-caller-classes-actor-access-bundle-del" ></a>
+
 ### bundle.del(moduleName)
 
 Delete module
@@ -136,7 +147,8 @@ Delete module
 | moduleName | string | Name of module |
 
 
-<a name="sugo-caller-classes-actor-access-bundle-names" />
+<a class='md-heading-link' name="sugo-caller-classes-actor-access-bundle-names" ></a>
+
 ### bundle.names() -> `Array.<string>`
 
 Get names of modules
