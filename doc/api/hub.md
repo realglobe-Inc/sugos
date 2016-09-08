@@ -1,4 +1,4 @@
-# sugo-hub@4.0.1
+# sugo-hub@4.0.5
 
 Hub server of SUGOS
 
@@ -16,7 +16,7 @@ Hub server of SUGOS
 Create a hub instance. Just an alias of `new SugoCaller(config)`
 ```javascript
 co(function * () {
-  let cloud = sugoHub({
+  let hub = sugoHub({
   // Options here
   })
   yield hub.listen(3000)

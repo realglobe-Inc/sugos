@@ -143,7 +143,7 @@ $ npm install -g sugos
 Getting Started
 ---------
 
-3 steps to be get started
+3 steps to be getting started
 
 1. [Setup SUGO-Hub](#setup-sugo-hub)
 2. [Declare modules on SUGO-Actor](#declare-on-sugo-actor)
@@ -184,7 +184,7 @@ co(function * () {
                                      height="40" style="height:40px"
 /></a>
 
-Create a [SUGO-Actor][sugo_actor_url] instance and declare modules. Then, connect to the cloud server.
+Create a [SUGO-Actor][sugo_actor_url] instance and declare modules. Then, connect to the hub server.
 
 ```javascript
 #!/usr/bin/env
@@ -204,7 +204,7 @@ co(function * () {
     /** Host of hub to connect */
     hostname: 'localhost',
     port: 3000,
-    /** Name to identify this actor on the cloud */
+    /** Name to identify this actor on the hub */
     key: 'my-actor-01',
     /** Modules to provide */
     modules: {
@@ -221,7 +221,7 @@ co(function * () {
       timeBomb: require('./example-time-bomb-module')({})
     }
   })
-  yield actor.connect() // Connect to cloud server
+  yield actor.connect() // Connect to the hub server
 }).catch((err) => console.error(err))
 
 ```

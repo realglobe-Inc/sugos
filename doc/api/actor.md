@@ -1,4 +1,4 @@
-# sugo-actor@4.4.2
+# sugo-actor@4.4.5
 
 Actor component of SUGOS.
 
@@ -99,7 +99,7 @@ Load a module
 
 ### actor.loadSub(moduleName, subModules) -> `Promise`
 
-Load submodules
+Load sub modules
 
 | Param | Type | Description |
 | ----- | --- | -------- |
