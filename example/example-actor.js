@@ -15,7 +15,7 @@ co(function * () {
     /** Host of hub to connect */
     hostname: 'localhost',
     port: 3000,
-    /** Name to identify this actor on the cloud */
+    /** Name to identify this actor on the hub */
     key: 'my-actor-01',
     /** Modules to provide */
     modules: {
@@ -32,5 +32,5 @@ co(function * () {
       timeBomb: require('./example-time-bomb-module')({})
     }
   })
-  yield actor.connect() // Connect to cloud server
+  yield actor.connect() // Connect to the hub server
 }).catch((err) => console.error(err))
