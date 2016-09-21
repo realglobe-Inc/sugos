@@ -1,6 +1,6 @@
 {
   "name": "sugos",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "A high-level RPC framework to make remote controlling super easy.",
   "main": "lib",
   "scripts": {
