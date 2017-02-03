@@ -29,21 +29,21 @@
     "sugo-hub": "^5.2.0"
   },
   "devDependencies": {
-    "amocha": "*",
+    "amocha": "^2.0.0",
     "ape-deploying": "^5.0.2",
     "ape-formatting": "^1.0.0",
     "ape-releasing": "^4.0.2",
     "ape-tasking": "^4.0.7",
-    "ape-tmpl": "*",
+    "ape-tmpl": "^5.0.20",
     "ape-updating": "^4.1.0",
     "asleep": "^1.0.3",
     "coz": "^6.0.17",
-    "filecopy": "*",
+    "filecopy": "^3.0.0",
     "injectmock": "^2.0.0",
-    "markdown-toc": "*",
-    "sg-templates": "*",
-    "sugos-assets": "*",
-    "sugos-index": "*",
+    "markdown-toc": "^1.1.0",
+    "sg-templates": "^1.2.5",
+    "sugos-assets": "^2.0.6",
+    "sugos-index": "^2.0.3",
     "sugos-travis": "^2.0.7"
   },
   "engines": {
