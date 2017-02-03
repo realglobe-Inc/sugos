@@ -1,4 +1,4 @@
-# sugo-hub@4.0.6
+# sugo-hub@5.2.0
 
 Hub server of SUGOS
 
@@ -13,7 +13,7 @@ Hub server of SUGOS
 
 ### sugoHub() -> `Promise.<SugoHub>`
 
-Create a hub instance. Just an alias of `new SugoCaller(config)`
+Create a hub instance. Just an alias of `new SugoHub(config)`
 ```javascript
 co(function * () {
   let hub = sugoHub({
@@ -46,6 +46,8 @@ Constructor of SugoHub class
 | config.context | Object | Koa context prototype |
 | config.public | string | Public directories. |
 | options.invalidateInterval | number | Interval for invalidate loop |
+| options.socketIoOptions | Object | Option object of Socket.IO constructor |
+| options.logFile | string,boolean | File name to save logs. |
 
 
 
