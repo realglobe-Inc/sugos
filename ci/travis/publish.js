@@ -6,6 +6,6 @@
 
 process.chdir(`${__dirname}/../..`)
 
-const { publishNpm } = require('sg-travis')
+const { publishNpm } = require('sugos-travis')
 
 publishNpm({})

@@ -4,8 +4,8 @@
   "description": "A high-level RPC framework to make remote controlling super easy.",
   "main": "lib",
   "scripts": {
-    "test": "./ci/test.js",
-    "prepublish": "./ci/assets.js && ./ci/build.js"
+    "test": "node ./ci/test.js",
+    "prepare": "node ./ci/assets.js && node ./ci/build.js"
   },
   "repository": "realglobe-Inc/sugos",
   "keywords": [
@@ -23,35 +23,31 @@
   "homepage": "https://github.com/realglobe-Inc/sugos#readme",
   "dependencies": {
     "co": "^4.6.0",
-    "stringcase": "^3.0.1",
-    "sugo-actor": "^4.4.2",
-    "sugo-caller": "^3.0.3",
-    "sugo-hub": "^4.0.1"
+    "stringcase": "^3.2.1",
+    "sugo-actor": "^4.5.1",
+    "sugo-caller": "^3.2.1",
+    "sugo-hub": "^5.2.0"
   },
   "devDependencies": {
-    "amocha": "^1.0.14",
+    "amocha": "*",
     "ape-deploying": "^5.0.2",
     "ape-formatting": "^1.0.0",
     "ape-releasing": "^4.0.2",
-    "ape-reporting": "^3.0.1",
     "ape-tasking": "^4.0.7",
-    "ape-tmpl": "^5.0.11",
-    "ape-updating": "^4.0.2",
+    "ape-tmpl": "*",
+    "ape-updating": "^4.1.0",
     "asleep": "^1.0.3",
     "coz": "^6.0.17",
-    "filecopy": "^2.0.0",
+    "filecopy": "*",
     "injectmock": "^2.0.0",
-    "markdown-toc": "^0.12.15",
-    "sg-templates": "^1.2.2",
-    "sg-travis": "^1.1.29",
-    "sugos-assets": "^2.0.4",
-    "sugos-index": "^2.0.0"
+    "markdown-toc": "*",
+    "sg-templates": "*",
+    "sugos-assets": "*",
+    "sugos-index": "*",
+    "sugos-travis": "^2.0.7"
   },
   "engines": {
-    "node": ">=6.x",
-    "npm": ">=3.x"
-  },
-  "publishConfig": {
-    "registry": "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-local"
+    "node": ">=6",
+    "npm": ">=4"
   }
 }

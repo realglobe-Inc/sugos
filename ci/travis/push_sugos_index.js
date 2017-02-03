@@ -6,7 +6,7 @@
 
 process.chdir(`${__dirname}/../..`)
 
-const { pushOtherRepository } = require('sg-travis')
+const { pushOtherRepository } = require('sugos-travis')
 
 pushOtherRepository({
   repository: 'sugos-index'
