@@ -1,4 +1,4 @@
-# sugo-actor@4.5.1
+# sugo-actor@4.5.3
 
 Actor component of SUGOS.
 
@@ -57,6 +57,7 @@ Constructor of SugoActor class
 | config.key | string | Key of actor |
 | config.auth | object | Auth object |
 | config.modules | object.&lt;String, SugoActorModule&gt; | Modules to load. |
+| config.path | string | Socket.IO option. |
 
 
 <a class='md-heading-link' name="sugo-actor-classes-sugo-actor-connect" ></a>
