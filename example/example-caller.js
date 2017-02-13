@@ -22,16 +22,7 @@ co(function * () {
   {
     let tableTennis = actor01.get('tableTennis')
     let pong = yield tableTennis.ping('hey!')
-    console.log(pong) // -> `"hey!" from call!`
+    console.log(pong) // -> `"hey!" from actor!`
   }
 
-  // Using event emitting interface
-  {
-    let timeBomb = actor01.get('timeBomb')
-    let tick = (data) => console.log(`tick: ${data.count}`)
-    timeBomb.on('tick', tick) // Add listener
-    let booom = yield timeBomb.countDown(10)
-    console.log(booom)
-    timeBomb.off('tick', tick) // Remove listener
-  }
 }).catch((err) => console.error(err))
