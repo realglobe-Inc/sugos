@@ -82,7 +82,7 @@ Table of Contents
   * [Access to modules from SUGO-Caller](#access-to-modules-from-sugo-caller)
 - [Advanced Usage](#advanced-usage)
   * [Using Event-Emit Interface](#using-event-emit-interface)
-- [More Examples](#more-examples)
+- [Tutorials](#tutorials)
 - [API Docs](#api-docs)
 - [Related Packages](#related-packages)
 - [Contributors](#contributors)
@@ -334,25 +334,22 @@ module.exports = newTimeBomb // Pass factory method
 
 <!-- Section from "doc/guides/21.Advanced Usage.md.hbs" End -->
 
-<!-- Section from "doc/guides/22.More Examples.md.hbs" Start -->
+<!-- Section from "doc/guides/22.Tutorials.md.hbs" Start -->
 
-<a name="section-doc-guides-22-more-examples-md"></a>
+<a name="section-doc-guides-22-tutorials-md"></a>
 
-More Examples
----------
+Tutorials
+----------
 
-There are example packages you can try out.
-
-| Name | Description | Online Version | Deploy to your Heroku |
-| ---- | ----------- | :----: | :---: |
-| [sugo-example-arduino](https://github.com/realglobe-Inc/sugo-example-arduino) | SUGOS example of Arduino | <a href="http://sugo-example-arduino.herokuapp.com"><img style="height:48px" height="48" src="http://realglobe-inc.github.io/sugo-example-arduino/images/favicon.png"/></a> | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sugo-example-arduino/tree/heroku) |
-| [sugo-example-say](https://github.com/realglobe-Inc/sugo-example-say) | SUGOS example project to invoke &#x60;say&#x60; command on remote MAC (OSX system is required) | <a href="http://sugo-example-say.herokuapp.com"><img style="height:48px" height="48" src="http://realglobe-inc.github.io/sugo-example-say/images/favicon.png"/></a> | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sugo-example-say/tree/heroku) |
-| [sugo-example-rapiro](https://github.com/realglobe-Inc/sugo-example-rapiro) | SUGOS example project to contorl RAPIRO. | <a href="http://sugo-example-rapiro.herokuapp.com"><img style="height:48px" height="48" src="http://realglobe-inc.github.io/sugo-example-rapiro/images/favicon.png"/></a> | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sugo-example-rapiro/tree/heroku) |
-| [sugo-example-plen](https://github.com/realglobe-Inc/sugo-example-plen) | SUGOS example project to contorl PLEN | <a href="http://sugo-example-plen.herokuapp.com"><img style="height:48px" height="48" src="http://realglobe-inc.github.io/sugo-example-plen/images/favicon.png"/></a> | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sugo-example-plen/tree/heroku) |
-| [sugo-example-roomba](https://github.com/realglobe-Inc/sugo-example-roomba) | SUGOS example project to contorl roomba | <a href="http://sugo-example-roomba.herokuapp.com"><img style="height:48px" height="48" src="http://realglobe-inc.github.io/sugo-example-roomba/images/favicon.png"/></a> | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sugo-example-roomba/tree/heroku) |
+- [Official Tutorial](https://github.com/realglobe-Inc/sugos-tutorial)
+    - [00 - Let us begin with SUGOS](https://github.com/realglobe-Inc/sugos-tutorial/blob/master/dist/markdown/en/00%20-%20Let%20us%20begin%20with%20SUGOS.md)
+    - [01 - Hello World, as always](https://github.com/realglobe-Inc/sugos-tutorial/blob/master/dist/markdown/en/01%20-%20Hello%20World%2C%20as%20always.md)
+    - [02 - Using Event Emit](https://github.com/realglobe-Inc/sugos-tutorial/blob/master/dist/markdown/en/02%20-%20Using%20Event%20Emit.md)
+    - [03 - Communication betweein Browsers](https://github.com/realglobe-Inc/sugos-tutorial/blob/master/dist/markdown/en/03%20-%20Communication%20betweein%20Browsers.md)
+    - [04 - Module as npm package](https://github.com/realglobe-Inc/sugos-tutorial/blob/master/dist/markdown/en/04%20-%20Module%20as%20npm%20package.md)
 
 
-<!-- Section from "doc/guides/22.More Examples.md.hbs" End -->
+<!-- Section from "doc/guides/22.Tutorials.md.hbs" End -->
 
 <!-- Section from "doc/guides/23.API.md.hbs" Start -->
 
@@ -392,7 +389,7 @@ There are a bunch of related package and there are listed in [sugos-index page][
 
 <!-- Section from "doc/guides/30.Related packages.md.hbs" End -->
 
-<!-- Section from "doc/guides/40. Contributors.md.hbs" Start -->
+<!-- Section from "doc/guides/40.Contributors.md.hbs" Start -->
 
 <a name="section-doc-guides-40-contributors-md"></a>
 
@@ -404,7 +401,7 @@ Contributors
 + [Fuji Haruka](https://github.com/FujiHaruka)
 
 
-<!-- Section from "doc/guides/40. Contributors.md.hbs" End -->
+<!-- Section from "doc/guides/40.Contributors.md.hbs" End -->
 
 
 <!-- Sections Start -->

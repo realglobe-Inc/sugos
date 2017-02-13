@@ -6,7 +6,7 @@
   * [Access to modules from SUGO-Caller](#access-to-modules-from-sugo-caller)
 - [Advanced Usage](#advanced-usage)
   * [Using Event-Emit Interface](#using-event-emit-interface)
-- [More Examples](#more-examples)
+- [Tutorials](#tutorials)
 - [API Docs](#api-docs)
 - [Related Packages](#related-packages)
 - [Contributors](#contributors)
