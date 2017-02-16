@@ -15,6 +15,8 @@ Caller component of SUGOS.
   + [bundle.set(moduleName, module, options)](#sugo-caller-classes-actor-access-bundle-set)
   + [bundle.del(moduleName)](#sugo-caller-classes-actor-access-bundle-del)
   + [bundle.names()](#sugo-caller-classes-actor-access-bundle-names)
++ [ActorAccessModule](sugo-caller-classes) Class
+  + [new ActorAccessModule(methods, connection)](#sugo-caller-classes-actor-access-module-constructor)
 
 ## Functions
 
@@ -152,6 +154,26 @@ Delete module
 ### bundle.names() -> `Array.<string>`
 
 Get names of modules
+
+<a class='md-heading-link' name="sugo-caller-classes"></a>
+
+## ActorAccessModule Class
+
+Loaded module for an actor.
+This class provides pseudo interfaces for remote actor module
+
+
+<a class='md-heading-link' name="sugo-caller-classes-actor-access-module-constructor" ></a>
+
+### new ActorAccessModule(methods, connection)
+
+Constructor of ActorAccessModule class
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| methods | Object | Actor specifications for module methods |
+| connection | Object | Actor connections |
+
 
 
 

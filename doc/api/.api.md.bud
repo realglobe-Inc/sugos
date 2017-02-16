@@ -43,7 +43,7 @@ module.exports = [
   api('caller', {
     pkg: require('sugo-caller/package.json'),
     jsdoc: require('sugo-caller/jsdoc.json'),
-    classNames: [ 'SugoCaller', 'ActorAccessBundle' ],
+    classNames: [ 'SugoCaller', 'ActorAccessBundle', 'ActorAccessModule' ],
     funcNames: [ 'sugoCaller' ]
   }),
   api('actor', {
