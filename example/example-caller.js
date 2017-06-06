@@ -7,21 +7,19 @@
 'use strict'
 
 const sugoCaller = require('sugo-caller')
-const co = require('co')
-
-co(function * () {
+;(async () => {
   let caller = sugoCaller({
     // Host of hub to connect
     hostname: 'localhost',
     port: 3000
   })
   // Connect to an actor with key
-  let actor01 = yield caller.connect('my-actor-01')
+  let actor01 = await caller.connect('my-actor-01')
 
   // Using call-return function
   {
     let tableTennis = actor01.get('tableTennis')
-    let pong = yield tableTennis.ping('hey!')
+    let pong = await tableTennis.ping('hey!')
     console.log(pong) // -> `"hey!" from actor!`
   }
 
