@@ -1,19 +1,21 @@
-# sugo-hub@5.2.0
+# sugo-hub@7.0.1
 
 Hub server of SUGOS
 
 + Functions
   + [sugoHub()](#sugo-hub-function-sugo-hub)
-+ [SugoHub](sugo-hub-classes) Class
-  + [new SugoHub(options)](#sugo-hub-classes-sugo-hub-constructor)
++ [`SugoHub`](#sugo-hub-class) Class
+  + [new SugoHub(options)](#sugo-hub-class-sugo-hub-constructor)
 
 ## Functions
 
 <a class='md-heading-link' name="sugo-hub-function-sugo-hub" ></a>
 
-### sugoHub() -> `Promise.<SugoHub>`
+### sugoHub() -> `SugoHub`
 
 Create a hub instance. Just an alias of `new SugoHub(config)`
+**Example**:
+
 ```javascript
 co(function * () {
   let hub = sugoHub({
@@ -24,14 +26,16 @@ co(function * () {
 ```
 
 
-<a class='md-heading-link' name="sugo-hub-classes"></a>
+<a class='md-heading-link' name="sugo-hub-class"></a>
 
-## SugoHub Class
+## `SugoHub` Class
 
 Hub server of SUGOS
 
 
-<a class='md-heading-link' name="sugo-hub-classes-sugo-hub-constructor" ></a>
+
+
+<a class='md-heading-link' name="sugo-hub-class-sugo-hub-constructor" ></a>
 
 ### new SugoHub(options)
 
@@ -45,8 +49,8 @@ Constructor of SugoHub class
 | options.endpoints | Object | Endpoint settings |
 | config.context | Object | Koa context prototype |
 | config.public | string | Public directories. |
-| options.invalidateInterval | number | Interval for invalidate loop |
 | options.socketIoOptions | Object | Option object of Socket.IO constructor |
+| options.localActors | Object | Local actor instances |
 | options.logFile | string,boolean | File name to save logs. |
 
 

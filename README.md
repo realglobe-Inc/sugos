@@ -121,21 +121,6 @@ Requirements
 
 <!-- Section from "doc/guides/10.Requirements.md.hbs" End -->
 
-<!-- Section from "doc/guides/11.Installation.md.hbs" Start -->
-
-<a name="section-doc-guides-11-installation-md"></a>
-
-Installation
------
-
-```bash
-# Install sugos as a global module
-$ npm install -g sugos
-```
-
-
-<!-- Section from "doc/guides/11.Installation.md.hbs" End -->
-
 <!-- Section from "doc/guides/20.Getting Started.md.hbs" Start -->
 
 <a name="section-doc-guides-20-getting-started-md"></a>
@@ -167,11 +152,10 @@ Setup a [SUGO-Hub][sugo_hub_url] server for actors and callers.
 'use strict'
 
 const sugoHub = require('sugo-hub')
-const co = require('co')
 
-co(function * () {
+;(async () => {
   // Start sugo-hub server
-  let hub = yield sugoHub({}).listen(3000)
+  let hub = await sugoHub({}).listen(3000)
   console.log(`SUGO Hub started at port: ${hub.port}`)
 }).catch((err) => console.error(err))
 
@@ -197,9 +181,8 @@ Create a [SUGO-Actor][sugo_actor_url] instance and declare modules. Then, connec
 
 const sugoActor = require('sugo-actor')
 const { Module } = sugoActor
-const co = require('co')
 
-co(function * () {
+;(async () => {
   let actor = sugoActor({
     /** Host of hub to connect */
     hostname: 'localhost',
@@ -210,18 +193,16 @@ co(function * () {
     modules: {
       // Example of a simple call-return function module
       tableTennis: new Module({
-        ping (pong = 'default pong!') {
-          return co(function * () {
-            /* ... */
-            return `"${pong}" from actor!` // Return to the remote caller
-          })
+        async ping (pong = 'default pong!') {
+          /* ... */
+          return `"${pong}" from actor!` // Return to the remote caller
         }
       }),
       // Load plugin module
       timeBomb: require('./example-time-bomb-module')({})
     }
   })
-  yield actor.connect() // Connect to the hub server
+  await actor.connect() // Connect to the hub server
 }).catch((err) => console.error(err))
 
 ```
@@ -247,21 +228,19 @@ Then get access to modules and call functions as you like.
 'use strict'
 
 const sugoCaller = require('sugo-caller')
-const co = require('co')
-
-co(function * () {
+;(async () => {
   let caller = sugoCaller({
     // Host of hub to connect
     hostname: 'localhost',
     port: 3000
   })
   // Connect to an actor with key
-  let actor01 = yield caller.connect('my-actor-01')
+  let actor01 = await caller.connect('my-actor-01')
 
   // Using call-return function
   {
     let tableTennis = actor01.get('tableTennis')
-    let pong = yield tableTennis.ping('hey!')
+    let pong = await tableTennis.ping('hey!')
     console.log(pong) // -> `"hey!" from actor!`
   }
 
@@ -289,26 +268,23 @@ On actors, each module provides [EventEmitter][event_emitter_url] interface like
  */
 'use strict'
 
-const co = require('co')
 const { Module } = require('sugo-actor')
 
 class TimeBomb extends Module {
   // Example of event emitting function
-  countDown (count) {
+  async countDown (count) {
     const s = this
-    return co(function * () {
-      let abort = () => { count = -1 }
-      s.on('abort', abort) // Listen to events from the caller
-      while (count > 0) {
-        count--
-        s.emit('tick', { count }) // Emit an event to the caller
-        yield new Promise((resolve) =>
-          setTimeout(() => resolve(), 1000)
-        )
-      }
-      s.off('abort', abort) // Remove event listener
-      return count === -1 ? 'hiss...' : 'booom!!!'
-    })
+    let abort = () => { count = -1 }
+    s.on('abort', abort) // Listen to events from the caller
+    while (count > 0) {
+      count--
+      s.emit('tick', { count }) // Emit an event to the caller
+      await new Promise((resolve) =>
+        setTimeout(() => resolve(), 1000)
+      )
+    }
+    s.off('abort', abort) // Remove event listener
+    return count === -1 ? 'hiss...' : 'booom!!!'
   }
 }
 
@@ -329,18 +305,17 @@ module.exports = newTimeBomb // Pass factory method
 'use strict'
 
 const sugoCaller = require('sugo-caller')
-const co = require('co')
 
-co(function * () {
+;(async () => {
   let caller = sugoCaller({ /* ... */ })
-  let actor01 = yield caller.connect('my-actor-01')
+  let actor01 = await caller.connect('my-actor-01')
 
   // Using event emitting interface
   {
     let timeBomb = actor01.get('timeBomb')
     let tick = (data) => console.log(`tick: ${data.count}`)
     timeBomb.on('tick', tick) // Add listener
-    let booom = yield timeBomb.countDown(10)
+    let booom = await timeBomb.countDown(10)
     console.log(booom)
     timeBomb.off('tick', tick) // Remove listener
   }

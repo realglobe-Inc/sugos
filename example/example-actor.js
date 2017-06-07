@@ -8,9 +8,8 @@
 
 const sugoActor = require('sugo-actor')
 const { Module } = sugoActor
-const co = require('co')
 
-co(function * () {
+;(async () => {
   let actor = sugoActor({
     /** Host of hub to connect */
     hostname: 'localhost',
@@ -21,16 +20,14 @@ co(function * () {
     modules: {
       // Example of a simple call-return function module
       tableTennis: new Module({
-        ping (pong = 'default pong!') {
-          return co(function * () {
-            /* ... */
-            return `"${pong}" from actor!` // Return to the remote caller
-          })
+        async ping (pong = 'default pong!') {
+          /* ... */
+          return `"${pong}" from actor!` // Return to the remote caller
         }
       }),
       // Load plugin module
       timeBomb: require('./example-time-bomb-module')({})
     }
   })
-  yield actor.connect() // Connect to the hub server
+  await actor.connect() // Connect to the hub server
 }).catch((err) => console.error(err))

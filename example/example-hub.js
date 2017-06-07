@@ -6,10 +6,9 @@
 'use strict'
 
 const sugoHub = require('sugo-hub')
-const co = require('co')
 
-co(function * () {
+;(async () => {
   // Start sugo-hub server
-  let hub = yield sugoHub({}).listen(3000)
+  let hub = await sugoHub({}).listen(3000)
   console.log(`SUGO Hub started at port: ${hub.port}`)
 }).catch((err) => console.error(err))

@@ -1,5 +1,4 @@
 - [Requirements](#requirements)
-- [Installation](#installation)
 - [Getting Started](#getting-started)
   * [Setup SUGO-Hub](#setup-sugo-hub)
   * [Declare modules on SUGO-Actor](#declare-modules-on-sugo-actor)
